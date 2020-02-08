@@ -1,0 +1,21 @@
+<div class="input-group-btn">
+	<button data-toggle="dropdown" class="btn btn-primary dropdown-toggle" type="button">
+		UOM <i class="dropdown-caret"></i>
+	</button>
+	<ul class="dropdown-menu dropdown-menu-right">
+		<li><a href="javascript:voids()">MM</a></li>
+		<li><a href="javascript:voids()">CM</a></li>
+		<li><a href="javascript:voids()">M</a></li>
+		<li><a href="javascript:voids()">IN</a></li>
+		<li><a href="javascript:voids()">FT</a></li>
+		<li><a href="javascript:voids()">inches</a></li>
+		<li><a href="javascript:voids()">feet</a></li>
+		<li><a href="javascript:voids()">meters</a></li>
+		<li><a href="javascript:voids()">decimeters</a></li>
+		<li><a href="javascript:voids()">centimeters</a></li>
+		<li><a href="javascript:voids()">millimeters</a></li>
+		<li><a href="javascript:voids()">micrometers</a></li>
+		<li><a href="javascript:voids()">nanometers</a></li>
+		<li><a href="javascript:voids()">picometers</a></li>
+	</ul>
+</div>

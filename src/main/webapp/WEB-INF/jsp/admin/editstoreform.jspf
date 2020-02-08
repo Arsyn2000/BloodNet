@@ -1,0 +1,79 @@
+<div class="modal fade" id="editstore" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document" style="max-width:700px;margin-top:50px">
+                      <div class="modal-content" >
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Store Configuration</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <form class="forms-sample" id="store-agent-mapping-form" name="store-agent-mapping-form" method="POST" action="admin/store-agent-mapping">
+                        <div class="modal-body">
+					      	<div class="row">
+								<div class="col-md-6 grid-margin">
+							          <div class="form-group">
+							            <label for="firstname">Store Name</label>
+							            <input type="text" class="form-control" id="storename" name="storename" placeholder="Store Name" autocomplete="off" disabled>
+							            <input type="hidden" id="storeid" name="storeid">
+							          </div>
+							          
+							     </div>
+							     <div class="col-md-6 grid-margin">
+							          <div class="form-group">
+							            <label for="lastname">Owner Name</label>
+							            <input type="text" class="form-control" id="ownername" name="ownername" placeholder="Owner Name" autocomplete="off" disabled>
+							          </div>
+							  	</div>
+							  </div>
+							  <div class="row">
+								<div class="col-md-6 grid-margin">
+							          <div class="form-group">
+							            <label for="username">Contact Number</label>
+							            <input type="text" class="form-control" id="wphone" name="wphone" placeholder="Work Phone" autocomplete="off" disabled>
+							          </div>
+							       </div>
+							       <div class="col-md-6 grid-margin">
+								       <div class="form-group">
+								            <label for="emailaddress">Email address</label>
+								            <input type="email" class="form-control" id="emailaddress" name="emailaddress" placeholder="Email" autocomplete="off" disabled>
+								          </div>
+								     </div>
+									</div>	         
+							  <div class="row">
+								<div class="col-md-6 grid-margin"> 
+							          <div class="form-group">
+							          	<p>Is Call facility Required?</p>
+										<label class="toggle-switch">
+											<input type="checkbox" id="callfacility">
+					                        <span class="toggle-slider round"></span>
+					                      </label>                     
+							          </div>
+							      </div>
+					              <div class="col-md-6 grid-margin">
+							          <div class="form-group">
+							          <!--   <p>Is Store Active?</p>
+										<label class="toggle-switch toggle-switch-success">
+											<input type="checkbox" id="storestatus">
+					                        <span class="toggle-slider round"></span>
+					                      </label>
+					                      -->                     
+							          </div>
+							      </div>
+					       	</div>
+							<div class="row">
+							   <div class="col-md-12 grid-margin stretch-card">
+								 	<div class="form-group" id="agent-div">
+					                    
+									</div>
+					            </div>
+							</div>
+						</div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-success" id="btn-submit">Submit</button>
+                          <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
+                        </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+					    

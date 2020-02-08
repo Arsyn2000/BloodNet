@@ -1,0 +1,38 @@
+<ul role="tablist" class="Polaris-Tabs" id="tablist">
+       <li class="Polaris-Tabs__TabContainer">
+      		<a href="customer/customer-menu">
+				<button id="products_tab" role="tab" type="button" tabindex="-1" class="Polaris-Tabs__Tab <c:if test = "${menu == 'Products'}"> Polaris-Tabs__Tab--selected  </c:if>">
+					<span class="Polaris-Tabs__Title">Products</span>
+				</button>
+			</a>
+		</li>
+        <li role="presentation" class="Polaris-Tabs__TabContainer">
+        	<a href="customer/pricing-menu">
+				<button id="pricing_tab" role="tab" type="button" tabindex="-1" class="Polaris-Tabs__Tab <c:if test = "${menu == 'Pricing'}"> Polaris-Tabs__Tab--selected  </c:if>">
+					<span class="Polaris-Tabs__Title">Pricing</span>
+				</button>
+			</a>
+		 </li>
+		 <li role="presentation" class="Polaris-Tabs__TabContainer">
+		 	<a href="customer/settings-menu">
+			<button id="settings_tab" role="tab" type="button" tabindex="-1" class="Polaris-Tabs__Tab <c:if test = "${menu == 'Settings'}"> Polaris-Tabs__Tab--selected  </c:if>" >
+				<span class="Polaris-Tabs__Title">Settings</span>
+			</button>
+			</a>
+		 </li>
+		 <li role="presentation" class="Polaris-Tabs__TabContainer">
+		 	<a href="customer/faq-menu">
+			<button id="faq_tab" role="tab" type="button" tabindex="-1" class="Polaris-Tabs__Tab <c:if test = "${menu == 'FaQ'}"> Polaris-Tabs__Tab--selected  </c:if>" >
+				<span class="Polaris-Tabs__Title">FaQ</span>
+			</button>
+			</a>
+		 </li>
+		 <li role="presentation" class="Polaris-Tabs__TabContainer">
+		 	<a href="customer/support-menu">
+			<button id="support_tab" role="tab" type="button" tabindex="-1" class="Polaris-Tabs__Tab <c:if test = "${menu == 'Support'}"> Polaris-Tabs__Tab--selected  </c:if>">
+				<span class="Polaris-Tabs__Title">Support</span>
+			</button>
+			</a>
+		 </li>
+      </ul>
+      

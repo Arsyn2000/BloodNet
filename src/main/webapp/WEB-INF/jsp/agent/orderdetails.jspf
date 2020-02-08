@@ -1,0 +1,175 @@
+<div class="modal fade" id="orderdetailsModal" tabindex="-1" role="dialog" aria-labelledby="orderdetailsModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-full">
+		<div class="modal-content" >
+        	<div class="modal-header">
+            	<h4 class="modal-title" id="orderdetailsModalLabel">Order details for <label id="lblOrderNumber"></label> | <label id="lblOrderDate"></label></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+			</div>
+            
+				<div class="modal-body">
+					<div class="row">
+						<!-- Left Pane -->
+						<div class="col-md-4">
+							<div class="row">
+								
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<div class="card text-white bg-success text-xs-center">
+		                                 <div class="card-body">
+		                                 	<h5 class="card-title"><i class="fe-user font-22 text-white"></i>  Customer Details</h5>
+		                                 	<form class="forms-sample" id="customerDetailsform" name="customerDetailsform" method="POST" action="agent/update-customer-details" autocomplete="off">
+		                                    	<div class="form-row">
+		                                            <div class="form-group col-sm-6">
+		                                                <label for="textcustomername">Name</label>
+		                                                <input type="text" class="form-control form-control-sm" id="textcustomername" name="textcustomername" aria-describedby="companyHelp" placeholder="Customer Name">
+		                                                <input type="hidden" id="customerOrderid" name="customerOrderid" value="">
+		                                            </div>
+		                                            <div class="form-group col-sm-6">
+		                                                <label for="textphone">Phone</label>
+		                                                <input type="text" class="form-control form-control-sm" id="textphone" name="textphone" placeholder="Phone" value="">
+		                                            </div>
+		                                         </div>
+		                                         <div class="form-row">
+												    <div class="form-group col-sm-10">
+		                                                <label for="textshipping">E-mail</label>
+		                                                <input type="text" class="form-control form-control-sm" id="textemail" name="textemail" placeholder="Email address" value="">
+		                                            </div>
+		                                            <div class="col-sm-2" style="padding-top:15px">
+		                                                <button type="submit" class="btn btn-primary btn-sm btn-block waves-effect waves-light" id="btn-Customer-Details-Update" name="btn-Customer-Details-Update"><i class="mdi mdi-content-save font-22 text-white"></i></button>
+		                                            </div>
+		                                        </div>	
+		                                   </form>
+		                                 </div>
+		                             </div> 
+								</div>
+							</div>		
+							<div class="row">
+								<div class="col-md-12">
+									<div class="card text-white bg-warning text-xs-center">
+		                                 <div class="card-body">
+		                                 	<h5 class="card-title"><i class="fe-map-pin font-22 text-white"></i>  Shipping Address</h5>
+		                                    <form class="forms-sample" id="shippingAddressform" name="shippingAddressform" method="POST" action="agent/update-shipping-address" autocomplete="off">
+		                                    	<div class="form-row">
+		                                            <div class="form-group col-sm-6">
+		                                                <label for="company">Province</label>
+		                                                <input type="text" class="form-control form-control-sm" id="textcompany" name="textcompany" aria-describedby="companyHelp" placeholder="Company" value="">
+		                                                <input type="hidden" id="shippingOrderid" name="shippingOrderid" value="">
+		                                            </div>
+		                                            <div class="form-group col-sm-6">
+		                                                <label for="fullname">Name</label>
+		                                                <input type="text" class="form-control form-control-sm" id="textfullname" name="textfullname" placeholder="Full name" value="">
+		                                            </div>
+												</div>
+												    <div class="form-group">
+		                                                <label for="address1">Street Address with Landmark</label>
+		                                                <input type="text" class="form-control form-control-sm" id="textaddress1" name="textaddress1" placeholder="Address line 1" value="">
+		                                            </div>
+		                                            <div class="form-group">
+		                                                <label for="address2">Barangay</label>
+		                                                <input type="text" class="form-control form-control-sm" id="textaddress2" name="textaddress2" placeholder="Address line 2" value="">
+		                                            </div>
+		                                        <div class="form-row">
+		                                            <div class="form-group col-sm-5">
+		                                                <label for="city">City</label>
+		                                                <input type="text" class="form-control form-control-sm" id="textcity" name="textcity" placeholder="City" value="">
+		                                            </div>
+		                                            <div class="form-group col-sm-5">
+		                                                <label for="zip">Zip</label>
+		                                                <input type="text" class="form-control form-control-sm" id="textzip" name="textzip" placeholder="Zip Code" value="">
+		                                            </div>
+		                                            <div class="col-sm-2" style="padding-top:15px">
+		                                            	<button type="submit" class="btn btn-primary btn-sm btn-block waves-effect waves-light" id="btn-Shipping-Address-Update" name="btn-Shipping-Address-Update"><i class="mdi mdi-content-save font-22 text-white"></i></button>
+		                                            </div>
+		                                        </div>                                            
+	                                        </form>
+		                                 </div>
+		                             </div> 
+								</div>
+							</div>
+						</div>	<!-- End of Left Pane -->
+						<!-- Right Pane -->
+						<div class="col-md-8">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="card">
+		                                 <div class="card-body">
+		                                 	 <h5 class="card-title"><i class="fe-package font-22"></i>  Order Details</h5>
+		                                 	 <form class="forms-sample" id="orderDetailsform" name="orderDetailsform" method="POST" action="agent/update-order-details" autocomplete="off">
+		                                    	<div class="form-row">
+		                                            <div class="form-group col-sm-3">
+		                                                <label for="textordervalue">Order Value</label>
+		                                                <input type="text" class="form-control form-control-sm" id="textordervalue" name="textordervalue" aria-describedby="companyHelp" placeholder="Order Value">
+		                                            </div>
+		                                            <div class="form-group col-sm-3">
+		                                                <label for="textdiscount">Discount</label>
+		                                                <input type="text" class="form-control form-control-sm" id="textdiscount" name="textdiscount" placeholder="Discount" value="">
+		                                            </div>
+												    <div class="form-group col-sm-3">
+		                                                <label for="textshipping">Shipping</label>
+		                                                <input type="text" class="form-control form-control-sm" id="textshipping" name="textshipping" placeholder="Shipping Cost" value="">
+		                                            </div>
+		                                            <div class="form-group col-sm-3">
+		                                                <label for="textfinaltotal">Final Total</label>
+		                                                <input type="text" class="form-control form-control-sm" id="textfinaltotal" name="textfinaltotal" placeholder="Final Total" value="" disabled>
+		                                            </div>
+		                                        </div>	
+		                                        <div class="form-row form-inline">
+		                                            <div class="col-sm-12">
+		                                            	<div class="text-sm-right button-list" id="demo-custom-toolbar2">
+					                                  		<button type="button" class="btn btn-warning waves-effect waves-light" id="btn-new"><i class="fe-feather font-22 text-white"></i> New</button>
+					                                  		<button type="button" class="btn btn-success waves-effect waves-light" id="btn-confirm"><i class="fe-check-circle font-22 text-white"></i> Confirm</button>
+					                                  		<button type="button" class="btn btn-primary waves-effect waves-light" id="btn-upsell"><i class="fe-heart font-22 text-white"></i> Up Sell</button>
+					                                  		<button type="button" class="btn btn-danger waves-effect waves-light" id="btn-cancel"><i class="fe-x-circle font-22 text-white"></i> Cancel</button>
+					                                  </div>
+		                                            </div>
+		                                       </div>
+		                                   </form>
+										 </div>
+		                             </div> 
+								</div>
+							</div>
+							<div class="row">
+	                            <div class="col-12">
+	                                <div class="card" style="margin-top:15px;">
+	                                    <div class="card-body">
+	                                    	<div class="row">
+	                                    		<div class="col-3">
+	                                    			<h5 class="mt-0"><i class="fe-box font-22"></i> Order Items</h5>
+	                                    		</div>
+	                                    		<div class="col-9">
+	                                    			<button type="button" class="btn btn-warning waves-effect waves-light float-right" id="btn-add-items">
+	                                    				<i class="fe-heart text-white"></i> Add Items
+	                                    			</button>
+	                                    		</div>
+	                                    		
+	                                    	</div>
+	                                        <div class="table-responsive" style="max-height:375px">
+	                                            <table class="table table-centered" id="orderItems">
+	                                                <thead>
+	                                                    <tr>
+	                                                    	<th>Id</th>
+	                                                    	<th>Title</th>
+	                                                        <th>Quantity</th>
+	                                                        <th>Unit Price</th>
+	                                                        <th>Total Price</th>
+	                                                    </tr>
+	                                                </thead>
+	                                                <tbody>
+	                                                    
+	                                                </tbody>
+	                                            </table>
+	                                        </div> <!-- end .table-responsive-->
+	                                    </div> <!-- end card-body -->
+	                                </div> <!-- end card -->
+	                            </div> <!-- end col -->
+	                        </div> <!-- end row -->
+						</div>	<!-- End of Right Pane -->
+					</div>
+			  </div>
+		</div>
+	</div>
+</div>
+					    

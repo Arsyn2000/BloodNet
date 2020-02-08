@@ -1,0 +1,40 @@
+		<div class="row">
+			<div class="col-12">
+              <div class="card">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-12 mx-auto">
+                    	   <button type="button" class="btn btn-success btn-icon-text" id="btn-edit-store">
+                          <i class="mdi mdi-account-settings btn-icon-prepend"></i>
+                          Edit Store
+                        </button>
+                    </div>
+                  </div>
+                  </div>
+                 </div>
+                 <!--  Data table display  -->
+                 <div class="card">
+                			<div class="card-body">
+                  				<div class="table-responsive">
+                    				<table id="store-listing" class="table">
+				                      <thead>
+				                        <tr>
+				                            <th>Store Name</th>
+				                            <th>Owner Name</th>
+				                            <th>Contact Number</th>
+				                            <th>Email Address</th>
+				                            <th>Is Call Facility required ?</th>
+				                            <th>Status</th>
+				                        </tr>
+				                      </thead>
+				                      <tbody>
+				                      </tbody>
+                    				</table>
+                  				</div>
+                 			</div>
+                 		</div>
+                 	<div>
+                 	</div>
+                	</div>
+              	</div>
+ 

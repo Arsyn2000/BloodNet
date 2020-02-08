@@ -1,0 +1,32 @@
+<nav id="mainnav-container">
+                <div id="mainnav">
+                    <div id="mainnav-menu-wrap">
+                        <div class="nano">
+                            <div class="nano-content">
+
+                                <ul id="mainnav-menu" class="list-group">
+						
+						            <li  class="${menu == 'Product' ? 'active' : ''}">
+						                <a href="customer/products" >
+						                <i class="glyphicon glyphicon-tags"></i>
+						                    <span class="menu-title">
+												<strong>Product</strong>
+											</span>
+						                </a>
+						            </li>
+						            
+						            <li class="${menu == 'iconic' ? 'active' : ''}">
+						                <a href="customer/iconic">
+						                <i class="glyphicon glyphicon-lock"></i>
+						                    <span class="menu-title">
+												<strong>Settings</strong>
+											</span>
+						                </a>
+						            </li>
+	                           </ul>
+							 </div>
+                        </div>
+                    </div>
+
+                </div>
+            </nav>

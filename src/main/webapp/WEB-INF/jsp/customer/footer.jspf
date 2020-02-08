@@ -1,0 +1,124 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<div class="footer" style="position: fixed; bottom: 0;  width: 100%;z-index:999">
+	<div style="-top-bar-background: #00848e; - -top-bar-color: #f9fafb; - -top-bar-background-lighter: #1d9ba4;">
+		<div class="Polaris-Card">
+			<div>				
+				<ul role="tablist" class="Polaris-Tabs Polaris-Tabs--fitted">
+					<li style="width: 100%;">
+						<ul role="tablist" class="Polaris-Tabs Polaris-Tabs--fitted">						
+							<li role="presentation" class="Polaris-Tabs__TabContainer"><label
+								id="TextField1Label" for="TextField1"
+								class="Polaris-Tabs__Title" style="text-align: center;">
+									Steps to access our system </label></li>									
+							<c:if test="${ status=='active'}">								
+								<li role="presentation" class="Polaris-Tabs__TabContainer">								
+								<button id="purchase_plan" role="tab" type="submit"
+									tabindex="-1" class="Polaris-Tabs__Tab" onclick="purchase_plan()"
+									style="background-color: rgba(0, 255, 0, 0.3);">
+									<span class="Polaris-Tabs__Title">1. Purchase plan </span>
+									</button></li>	
+							</c:if>	
+							<c:if test="${ status!='active'}">								
+								<li role="presentation" class="Polaris-Tabs__TabContainer">								
+								<button id="purchase_plan" role="tab" type="submit"
+									tabindex="-1" class="Polaris-Tabs__Tab" onclick="purchase_plan()"
+									style="background-color: rgba(255, 0, 0, 0.3);">
+									<span class="Polaris-Tabs__Title">1. Purchase plan </span>
+									</button></li>	
+							</c:if>
+							<c:if test="${ valid == 'Error' }">																								
+								<li role="presentation" class="Polaris-Tabs__TabContainer">
+								<button id="configure_iconic" role="tab" type="button" tabindex="-1"
+									class="Polaris-Tabs__Tab"  onclick="configure_iconic()" 
+									style="background-color: rgba(255, 0, 0, 0.3);">
+									<span class="Polaris-Tabs__Title">2. Configure to Iconic store </span>
+								</button></li>
+							</c:if>
+							<c:if test="${ valid == 'Success'}">																								
+								<li role="presentation" class="Polaris-Tabs__TabContainer">
+								<button id="configure_iconic" role="tab" type="button" tabindex="-1"
+									class="Polaris-Tabs__Tab"  onclick="configure_iconic()" 
+									style="background-color: rgba(0, 255, 0, 0.3);">
+									<span class="Polaris-Tabs__Title">2. Configure to Iconic store </span>
+								</button></li>
+							</c:if>
+										
+					<c:choose>					
+						 <c:when test = "${accountData.ariseConnected == 'false'}"> 
+							<c:choose>
+								 <c:when test="${ (status=='active') &&  (valid == 'Success')}">	
+									<li >
+										<button id="connect_disconnect" role="tab" type="button" 
+											tabindex="-1" class="Polaris-Button Polaris-Button--primary" value="connect"
+											style=" height:40px; width:200px; " >
+											<span class="Polaris-Tabs__Title"> Connect </span>
+										</button>
+									</li>
+								</c:when>
+								 <c:otherwise>
+								 <li>
+										<button id="connect_disconnect" role="tab" type="button" 
+											tabindex="-1" class="Polaris-Button Polaris-Button--disabled" value="connect"
+											style=" height:40px; width:200px;">
+											<span class="Polaris-Tabs__Title"> Connect </span>
+										</button>
+									</li>
+								  </c:otherwise>
+						 </c:choose>
+				 	</c:when> 
+						<c:otherwise>
+									<c:choose>
+										<c:when test="${ (status!='active') ||  (valid == 'Error')}">
+											<li >
+												<button id="connect_disconnect" role="tab" type="button"
+													tabindex="-1" class="Polaris-Button Polaris-Button--disabled" value="connect"
+													style="height:40px; width:200px;" disabled="">
+													<span class="Polaris-Tabs__Title"> Connect </span>
+												</button>
+											</li>
+										</c:when>
+										<c:otherwise>
+											<li >
+												<button id="connect_disconnect" role="tab" type="button"
+													tabindex="-1" class="Polaris-Button Polaris-Button--primary" value="disconnect"
+													style="height:40px; width:200px;">
+													Disconnect
+												</button>
+											</li>
+										 </c:otherwise>
+									</c:choose>
+						</c:otherwise>
+					</c:choose>
+				</ul>
+				</li>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+function purchase_plan() {	
+	window.top.location.href = "/iconic/customer/purchase_plan";
+}
+function configure_iconic() {
+	window.top.location.href = "/iconic/customer/configure_iconic";
+}
+$(document).ready(function(){	
+	$('#connect_disconnect').click(function(){
+		var operation = $(this).attr('value');
+	   	 $.ajax({type : "GET", 
+	   		 	url : ('customer/connect-iconic/'+ operation ) ,
+	 				success : function(resp) {    			
+	 				console.log("resp:" + resp);
+	               $('#span_message').html(resp);
+	               $('#success_banner').css('display','block');
+	               setTimeout(function() {
+	                   $('#success_banner').fadeOut('slow');
+	                   window.location.reload();
+	               }, 2000);
+	               
+	           }
+	    	});    	 
+	});
+});
+
+</script>

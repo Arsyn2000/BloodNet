@@ -1,0 +1,45 @@
+<script src="${pageContext.request.contextPath}/js/jquery-2.1.1.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery-form.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery.validate.min.js"></script>
+<script src="https://cdn.shopify.com/s/assets/external/app.js"></script>
+<div
+	style="-top-bar-background: #00848e; - -top-bar-color: #f9fafb; - -top-bar-background-lighter: #1d9ba4;">
+	<div class="Polaris-Card">
+		<div class="Polaris-Card__Section">
+			<div class="Polaris-Stack">
+				<div class="Polaris-Stack__Item" style="width: 25%;">
+						<div class="Polaris-Labelled__LabelWrapper" >						
+								<div class="Polaris-Label" >
+									<label id="TextField1Label" for="TextField1"
+										class="Polaris-Tabs__Tab" style="text-align: right;">Steps to access our system</label>
+								</div>						
+						</div>
+					</div>
+					
+					<div class="Polaris-Stack__Item" style="width: 25%; background-color:rgba(255,0,0,0.3);">
+						<div class="Polaris-Labelled__LabelWrapper">
+							<div class="Polaris-Label">
+								<label id="TextField1Label" for="TextField1"
+									class="Polaris-Label__Text">Purchase plan</label>
+							</div>
+						</div>
+					</div>
+					<div class="Polaris-Stack__Item" style="width: 25%; background-color: rgba(255,0,0,0.3);">
+						<div class="Polaris-Labelled__LabelWrapper">
+							<div class="Polaris-Label">
+								<label id="TextField1Label" for="TextField1"
+									class="Polaris-Label__Text">Configure to Iconic store</label>
+							</div>
+						</div>
+					</div>
+					<div class="Polaris-Stack__Item" style="width: 20%;">
+						<button type="submit" class="Polaris-Button" style="float: right; " position= "relative">
+							<span class="Polaris-Button__Content"><span
+								class="Polaris-Button__Text">Connect</span></span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+

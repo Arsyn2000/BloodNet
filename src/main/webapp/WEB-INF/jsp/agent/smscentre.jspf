@@ -1,0 +1,29 @@
+<div id="custom-modal" class="modal-demo" style="width:750px !important">
+	<button type="button" class="close" onclick="Custombox.modal.close();">
+		<span>&times;</span><span class="sr-only">Close</span>
+	</button>
+	<h4 class="custom-modal-title">SMS</h4>
+	<div class="custom-modal-text">
+		<div class="card-box">
+			<div class="row">
+				<div class="chat-conversation" style="width:750px !important">
+					<ul class="conversation-list slimscroll">
+
+					</ul>
+					<form class="forms-sample" id="smslogform" name="smslogform" method="POST" action="agent/create-sms">
+						<div class="row">
+							<div class="col">
+								<input type="text" class="form-control chat-input" placeholder="Enter your text" id="smscontent" name="smscontent">
+								<input type="hidden" id="smsagentid" name="smsagentid">
+								<input type="hidden" id="smsorderid" name="smsorderid">
+							</div>
+							<div class="col-auto">
+								<button type="submit" class="btn btn-danger chat-send btn-block waves-effect waves-light">Send</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

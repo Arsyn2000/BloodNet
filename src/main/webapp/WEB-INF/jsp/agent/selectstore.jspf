@@ -1,0 +1,31 @@
+<div class="modal fade" id="selectStoreModal" tabindex="-1" role="dialog" aria-labelledby="selectStoreModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content" >
+        	<div class="modal-header">
+            	<h4 class="modal-title" id="selectStoreModalLabel">Select Store</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+			</div>
+            <form class="forms-sample" id="selectStoreForm" name="selectStoreForm" method="GET" action="agent/get-new-orderid" autocomplete="off">
+				<div class="modal-body">
+					<div class="row">
+						<!-- Left Pane -->
+						<div class="col-md-12">
+							<div class="row">
+								<div class="col-md-8" id="storeSelect">
+									
+								</div>
+								<div class="col-md-4">
+									 <button type="submit" class="btn btn-primary btn-sm btn-block waves-effect waves-light" id="btn-select-store" name="btn-select-store">
+									 	Select
+									 </button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>	
+		</div>
+	</div>
+</div>	

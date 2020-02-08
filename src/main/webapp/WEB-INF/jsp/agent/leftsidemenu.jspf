@@ -1,0 +1,26 @@
+<div class="left-side-menu">
+	<div class="slimscroll-menu">
+		<div id="sidebar-menu">
+			<ul class="metismenu" id="side-menu">
+				<li><a href="javascript: void(0);"> <i class="fe-airplay"></i>
+						<span> Dashboards </span>
+					</a>
+				</li>
+				<li>
+					<a href="agent/orders"> 
+						<i class="fe-shopping-cart"></i> <span> Orders </span>	
+					</a>
+				</li>
+					
+				<li>
+					<a href="agent/products"> 
+						<i class="fe-package"></i> <span> Products </span>	
+					</a>
+				</li>
+			
+				
+			</ul>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</div>

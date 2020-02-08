@@ -1,0 +1,152 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<div id="clothing_specific_types" class="tab-pane fade in active">
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="form-group">
+				<label class="control-label">Fabric Type1</label>
+				<label class="control-label add-tooltip" data-toggle="tooltip" data-container="body" data-placement="top" data-original-title="">
+					<i class="ion-wand">What is this ?</i>
+				</label>
+				<input type="text" class="form-control" name="fabric_type1" id="fabric_type1" value="${parameters['fabric_type1']}" disabled />
+			</div>
+		</div>
+		<div class="col-sm-6">
+			<div class="form-group">
+				<label class="control-label">Fabric Type2</label>
+				<label class="control-label add-tooltip" data-toggle="tooltip" data-container="body" data-placement="top" data-original-title="">
+					<i class="ion-wand">What is this ?</i>
+				</label>
+				<input type="text" class="form-control" name="fabric_type2" id="fabric_type2" value="${parameters['fabric_type2']}" disabled /> 
+			</div>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="form-group">
+				<label class="control-label">Fabric Type3</label>
+				<label class="control-label add-tooltip" data-toggle="tooltip" data-container="body" data-placement="top" data-original-title="">
+					<i class="ion-wand">What is this ?</i>
+				</label>
+				<input type="text" class="form-control" name="fabric_type3" id="fabric_type3" value="${parameters['fabric_type3']}" disabled />
+			</div>
+		</div>
+		<div class="col-sm-6">
+			<div class="form-group">
+				<label class="control-label">Key Product Features1</label>
+				<label class="control-label add-tooltip" data-toggle="tooltip" data-container="body" data-placement="top" data-original-title="">
+					<i class="ion-wand">What is this ?</i>
+				</label>
+				<input type="text" class="form-control" name="key_product_features1" id="key_product_features1" value="${parameters['key_product_features1']}" disabled />
+			</div>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="form-group">
+				<label class="control-label">Key Product Features2</label>
+				<label class="control-label add-tooltip" data-toggle="tooltip" data-container="body" data-placement="top" data-original-title="">
+					<i class="ion-wand">What is this ?</i>
+				</label>
+				<input type="text" class="form-control" name="key_product_features2" id="key_product_features2" value="${parameters['key_product_features2']}" disabled />
+			</div>
+		</div>
+		<div class="col-sm-6">
+			<div class="form-group">
+				<label class="control-label">Key Product Features3</label>
+				<label class="control-label add-tooltip" data-toggle="tooltip" data-container="body" data-placement="top" data-original-title="">
+					<i class="ion-wand">What is this ?</i>
+				</label>
+				<input type="text" class="form-control" name="key_product_features3" id="key_product_features3" value="${parameters['key_product_features3']}" disabled />
+			</div>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="form-group">
+				<label class="control-label">Key Product Features4</label>
+				<label class="control-label add-tooltip" data-toggle="tooltip" data-container="body" data-placement="top" data-original-title="">
+					<i class="ion-wand">What is this ?</i>
+				</label>
+				<input type="text" class="form-control" name="key_product_features4" id="key_product_features4" value="${parameters['key_product_features4']}" disabled />
+			</div>
+		</div>
+		<div class="col-sm-6">
+			<div class="form-group">
+				<label class="control-label">Key Product Features5</label>
+				<label class="control-label add-tooltip" data-toggle="tooltip" data-container="body" data-placement="top" data-original-title="">
+					<i class="ion-wand">What is this ?</i>
+				</label>
+				<input type="text" class="form-control" name="key_product_features5" id="key_product_features5" value="${parameters['key_product_features5']}" disabled />
+			</div>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="form-group">
+				<label class="control-label">Product Description</label>
+				<label class="control-label add-tooltip" data-toggle="tooltip" data-container="body" data-placement="top" data-original-title="">
+					<i class="ion-wand">What is this ?</i>
+				</label>
+				<input type="text" class="form-control" name="clothing_product_description" id="clothing_product_description" value="${parameters['clothing_product_description']}" disabled />
+			</div>
+		</div>
+		<div class="col-sm-6">
+			<div class="form-group">
+				<label class="control-label">Closure Type</label>
+				<label class="control-label add-tooltip" data-toggle="tooltip" data-container="body" data-placement="top" data-original-title="">
+					<i class="ion-wand">What is this ?</i>
+				</label>
+				<input type="text" class="form-control" name="closure_type" id="closure_type" value="${parameters['closure_type']}" disabled />
+			</div>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="form-group">
+				<label class="control-label">Front Pleat Type</label>
+				<label class="control-label add-tooltip" data-toggle="tooltip" data-container="body" data-placement="top" data-original-title="">
+					<i class="ion-wand">What is this ?</i>
+				</label>
+				<input type="text" class="form-control" id="front_pleat_type" name="front_pleat_type" value="${parameters['front_pleat_type']}" disabled />
+			</div>
+		</div>
+		<div class="col-sm-6">
+			<div class="form-group">
+				<label class="control-label">Additional Features</label>
+				<label class="control-label add-tooltip" data-toggle="tooltip" data-container="body" data-placement="top" data-original-title="">
+					<i class="ion-wand">What is this ?</i>
+				</label>
+				<input type="text" class="form-control" id="additional_features" name="additional_features" value="${parameters['additional_features']}" disabled />
+			</div>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="form-group">
+				<label class="control-label">Opacity / Transparency</label>
+				<label class="control-label add-tooltip" data-toggle="tooltip" data-container="body" data-placement="top" data-original-title="">
+					<i class="ion-wand">What is this ?</i>
+				</label>
+				<input type="text" class="form-control" id="opacity_transparency" name="opacity_transparency" value="${parameters['opacity_transparency']}" disabled />
+			</div>
+		</div>
+		<div class="col-sm-6">
+			<div class="form-group">
+				<label class="control-label">Style</label>
+				<label class="control-label add-tooltip" data-toggle="tooltip" data-container="body" data-placement="top" data-original-title="">
+					<i class="ion-wand">What is this ?</i>
+				</label>
+				<input type="text" class="form-control" id="style" name="style" value="${parameters['style']}" disabled />
+			</div>
+		</div>
+	</div>
+		
+</div>
+

@@ -1,0 +1,42 @@
+		<div class="row">
+			<div class="col-12">
+				<div class="card">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-12 mx-auto">
+                    	<button type="button" class="btn btn-primary btn-icon-text" id="btn-add-notes">
+                          <i class="mdi mdi-account-plus btn-icon-prepend"></i>
+                          Add Notes
+                        </button>
+                    </div>
+                  </div>
+                  </div>
+                 </div>
+                 <!--  Data table display  -->
+                 <div class="card">
+                			<div class="card-body">
+                  				<div class="table-responsive">
+                    				<table id="order-listing" class="table">
+				                      <thead>
+				                        <tr>
+				                        	<th>Id</th>
+				                        	<th>Shopify Store</th>
+				                            <th>Order Number</th>
+				                            <th>Date</th>
+				                            <th>Customer Name</th>
+				                            <th>Payment</th>
+				                            <th>Fulfillment</th>
+				                            <th>Total</th>
+				                        </tr>
+				                      </thead>
+				                      <tbody>
+				                      </tbody>
+                    				</table>
+                  				</div>
+                 			</div>
+                 		</div>
+                 	<div>
+                 	</div>
+                	</div>
+              	</div>
+ 

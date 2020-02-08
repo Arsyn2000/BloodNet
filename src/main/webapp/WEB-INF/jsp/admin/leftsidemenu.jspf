@@ -1,0 +1,49 @@
+<div class="left-side-menu">
+	<div class="slimscroll-menu">
+		<div id="sidebar-menu">
+			<ul class="metismenu" id="side-menu">
+				<li>
+					<a href="admin/dashboard"> <i class="fe-airplay"></i>
+						<span> Dashboards </span>
+					</a>
+				</li>
+				<li>
+					<a href="admin/orders"> 
+						<i class="fe-shopping-cart"></i> <span> Orders </span>	
+					</a>
+				</li>
+					
+				<li>
+					<a href="admin/products"> 
+						<i class="fe-package"></i> <span> Products </span>	
+					</a>
+				</li>
+				
+				<li>
+					<a href="admin/reports"> 
+						<i class="fe-list"></i> <span> Reports </span>	
+					</a>
+				</li>
+				
+				<li>
+					<a href="admin/stores"> 
+						<i class="fe-layers"></i> <span> Stores </span>	
+					</a>
+				</li>
+				
+				<li>
+					<a href="admin/agents"> 
+						<i class="fe-users"></i> <span> Agents </span>	
+					</a>
+				</li>
+				
+				<li>
+					<a href="admin/settings"> 
+						<i class="fe-cpu"></i> <span> Setting </span>	
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</div>

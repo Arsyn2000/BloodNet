@@ -1,0 +1,36 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable" role="document" style="max-width:700px;margin-top:50px">
+                      <div class="modal-content" >
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Notes Center</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <form class="forms-sample" id="addnotesform" name="addnotesform" method="POST" action="agent/create-notes" autocomplete="off">
+                        <div class="modal-body" style="max-height:500px;overflow-y: auto;">
+							<div class="row">
+								<div class="col-md-10 grid-margin">
+							          <div class="form-group">
+							            <label for="firstname">Comments :</label>
+							            <textarea class="form-control" id="notes" name="notes" rows="2" required></textarea>
+							            <input type="hidden" id="agentid" name="agentid">
+							            <input type="hidden" id="orderid" name="orderid">
+							          </div>
+							     </div>
+							     <div class="col-md-2 grid-margin mt-3">
+							     	<button type="submit" class="btn btn-success btn-block" id="btn-submit" style="height:60px;">Add</button>
+							     </div>
+							  </div>
+							  <h2>Previous Notes </h2>
+							  		<div class="row">
+										<div class="col-md-12 grid-margin" id="previousnotes">
+											
+										</div>
+									</div>
+								</div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+					    

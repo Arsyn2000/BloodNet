@@ -1,0 +1,122 @@
+<!-- SETTING TAB DETAIL START -->
+<div class="Polaris-Tabs__Panel" role="tabpanel" aria-labelledby="settings" tabindex="-1" id="settings_tabc">
+    <div class="Polaris-Card__Section">
+
+            <br/>
+
+            <form name="settings_form" id="settings_form" action="customer/settings" method="post" >
+            	<div style="--top-bar-background:#00848e; --top-bar-color:#f9fafb; --top-bar-background-lighter:#1d9ba4;">
+				  <div class="Polaris-FormLayout">
+				    <div role="group" class="Polaris-FormLayout--condensed">
+				      <div class="Polaris-FormLayout__Items">
+				        <div class="Polaris-FormLayout__Item">
+				          <div class="">
+				            <div class="Polaris-Labelled__LabelWrapper">
+				              <div class="Polaris-Label"><label id="TextField15Label" for="TextField15" class="Polaris-Label__Text">ICONIC Username</label></div>
+				            </div>
+				            <div class="Polaris-TextField"><input id="username" name="username" class="Polaris-TextField__Input" type="email" value="${settingsData.username}">
+				              <div class="Polaris-TextField__Backdrop"></div>
+				            </div>
+				          </div>
+				        </div>
+				        <div class="Polaris-FormLayout__Item">
+				          <div class="">
+				            <div class="Polaris-Labelled__LabelWrapper">
+				              <div class="Polaris-Label"><label id="TextField16Label" for="TextField16" class="Polaris-Label__Text">API Key</label></div>
+				            </div>
+				            <div class="Polaris-TextField"><input id="apiKey" class="Polaris-TextField__Input" name="apiKey" value="${settingsData.apiKey}">
+				              <div class="Polaris-TextField__Backdrop"></div>
+				            </div>
+				          </div>
+				        </div>
+				        <div class="Polaris-FormLayout__Item">
+				          <div class="">
+				            <div class="Polaris-Labelled__LabelWrapper">
+				              <div class="Polaris-Label"><label id="TextField17Label" for="TextField17" class="Polaris-Label__Text">Commission</label></div>
+				            </div>
+				            <div class="Polaris-TextField"><input id="commission" name="commission" class="Polaris-TextField__Input" value="${settingsData.commission}">
+				              <div class="Polaris-TextField__Backdrop"></div>
+				            </div>
+				          </div>
+				        </div>
+				      </div>
+				      <div class="Polaris-FormLayout__Items">
+				      	<div class="Polaris-FormLayout__Item">
+							<div style="--top-bar-background:#00848e; --top-bar-color:#f9fafb; --top-bar-background-lighter:#1d9ba4;">
+								<label class="Polaris-Choice" for="inventory_sync"><span class="Polaris-Choice__Control">
+									<span class="Polaris-Checkbox">
+										<input id="inventory_sync" <c:if test="${settingsData.inventorySync == 'on'}"> checked="checked"</c:if>  name="inventory_sync" type="checkbox" class="Polaris-Checkbox__Input" >
+										<span class="Polaris-Checkbox__Backdrop"></span>
+											<span class="Polaris-Checkbox__Icon">
+												<span class="Polaris-Icon">
+													<svg viewBox="0 0 20 20" class="Polaris-Icon__Svg" focusable="false" aria-hidden="true">
+			              								<path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.437.437 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
+			            							</svg>
+		            							</span>
+	            							</span>
+            							</span>
+            						</span>
+            						<span class="Polaris-Choice__Label">Inventory Sync</span>
+            					</label>
+            				</div>
+				      	</div>
+				      	<div class="Polaris-FormLayout__Item">
+							<div style="--top-bar-background:#00848e; --top-bar-color:#f9fafb; --top-bar-background-lighter:#1d9ba4;">
+								<label class="Polaris-Choice" for="product_sync"><span class="Polaris-Choice__Control">
+									<span class="Polaris-Checkbox">
+										<input id="product_sync" <c:if test="${settingsData.productSync == 'on'}"> checked="checked"</c:if>  name="product_sync" type="checkbox" class="Polaris-Checkbox__Input" >
+										<span class="Polaris-Checkbox__Backdrop"></span>
+											<span class="Polaris-Checkbox__Icon">
+												<span class="Polaris-Icon">
+													<svg viewBox="0 0 20 20" class="Polaris-Icon__Svg" focusable="false" aria-hidden="true">
+			              								<path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.437.437 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
+			            							</svg>
+		            							</span>
+	            							</span>
+            							</span>
+            						</span>
+            						<span class="Polaris-Choice__Label">Product Sync</span>
+            					</label>
+            				</div>
+				      	</div>
+				      	<div class="Polaris-FormLayout__Item">
+							<div style="--top-bar-background:#00848e; --top-bar-color:#f9fafb; --top-bar-background-lighter:#1d9ba4;">
+								<label class="Polaris-Choice" for="order_sync"><span class="Polaris-Choice__Control">
+									<span class="Polaris-Checkbox">
+										<input id="order_sync" <c:if test="${settingsData.orderSync == 'on'}"> checked="checked"</c:if>  name="order_sync" type="checkbox" class="Polaris-Checkbox__Input" >
+										<span class="Polaris-Checkbox__Backdrop"></span>
+											<span class="Polaris-Checkbox__Icon">
+												<span class="Polaris-Icon">
+													<svg viewBox="0 0 20 20" class="Polaris-Icon__Svg" focusable="false" aria-hidden="true">
+			              								<path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.437.437 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
+			            							</svg>
+		            							</span>
+	            							</span>
+            							</span>
+            						</span>
+            						<span class="Polaris-Choice__Label">Order Sync</span>
+            					</label>
+            				</div>
+				      	</div>
+				      </div>
+				      <div class="Polaris-FormLayout__Items">
+	                     <div class="Polaris-FormLayout__Item">
+	                         <button type="submit" class="Polaris-Button" name="submit" id="submit">
+	                             <span class="Polaris-Button__Content">
+	                                 <span class="Polaris-Button__Text">Submit</span>
+	                             </span>
+	                         </button>
+	                         &nbsp; &nbsp;
+	                         <!-- <button type="button" name="connect" id="connect" class="Polaris-Button" >
+	                             <span class="Polaris-Button__Content">
+	                                 <span class="Polaris-Button__Text connect">Connect</span>
+	                             </span>
+	                         </button> -->
+	                     </div>
+				      </div> 
+				    </div>
+				  </div>
+				</div>
+            </form>
+    </div>
+</div>

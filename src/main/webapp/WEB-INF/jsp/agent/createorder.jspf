@@ -1,0 +1,100 @@
+<div class="modal fade" id="createOrderModal" tabindex="-1" role="dialog" aria-labelledby="createOrderModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-full">
+		<div class="modal-content" >
+        	<div class="modal-header">
+            	<h4 class="modal-title" id="createOrderModalLabel"></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+			</div>
+            
+				<div class="modal-body">
+					<form class="forms-sample" id="newCustomerDetailsform" name="newCustomerDetailsform" method="POST" action="agent/create-new-customer-shipping" autocomplete="off">
+					<div class="row">
+						<!-- Left Pane -->
+						<div class="col-md-4">
+							<div class="card text-white bg-success text-xs-center">
+		                          <div class="card-body">
+		                                 <h5 class="card-title"><i class="fe-user font-22 text-white"></i>  Customer Details</h5>
+		                                 	<input type="hidden" id="createOrderStoreId" name="createOrderStoreId" value="">
+		                                 	<input type="hidden" id="newOrderId" name="newOrderId" value="">
+		                                 	<input type="hidden" id="newOrderNumber" name="newOrderNumber" value="">
+		                                    	<div class="form-row">
+		                                            <div class="form-group col-sm-6">
+		                                                <label for="textcustomername">Name</label>
+		                                                <input type="text" class="form-control form-control-sm" id="newtextcustomername" name="newtextcustomername" aria-describedby="companyHelp" placeholder="Customer Name">
+		                                                
+		                                            </div>
+		                                            <div class="form-group col-sm-6">
+		                                                <label for="textphone">Phone</label>
+		                                                <input type="text" class="form-control form-control-sm" id="newtextphone" name="newtextphone" placeholder="Phone" value="">
+		                                            </div>
+		                                         </div>
+		                                         <div class="form-row">
+												    <div class="form-group col-sm-12">
+		                                                <label for="textshipping">E-mail</label>
+		                                                <input type="text" class="form-control form-control-sm" id="newtextemail" name="newtextemail" placeholder="Email address" value="">
+		                                            </div>
+		                                        </div>	
+		                                   
+		                                 </div>
+		                             </div> 
+		                        </div>
+								<div class="col-md-8">
+									<div class="card text-white bg-warning text-xs-center">
+		                                 <div class="card-body">
+		                                 	<h5 class="card-title"><i class="fe-map-pin font-22 text-white"></i>  Shipping Address</h5>
+		                                   
+		                                    	<div class="form-row">
+		                                            <div class="form-group col-sm-6">
+		                                                <label for="company">Province</label>
+		                                                <input type="text" class="form-control form-control-sm" id="newtextcompany" name="newtextcompany" aria-describedby="companyHelp" placeholder="Province" value="">
+		                                              
+		                                            </div>
+		                                            <div class="form-group col-sm-6">
+		                                                <label for="fullname">Name</label>
+		                                                <input type="text" class="form-control form-control-sm" id="newtextfullname" name="newtextfullname" placeholder="Full name" value="">
+		                                            </div>
+												</div>
+												    <div class="form-group">
+		                                                <label for="address1">Street Address with Landmark</label>
+		                                                <input type="text" class="form-control form-control-sm" id="newtextaddress1" name="newtextaddress1" placeholder="Address line 1" value="">
+		                                            </div>
+		                                            <div class="form-group">
+		                                                <label for="address2">Barangay</label>
+		                                                <input type="text" class="form-control form-control-sm" id="newtextaddress2" name="newtextaddress2" placeholder="Address line 2" value="">
+		                                            </div>
+		                                        <div class="form-row">
+		                                            <div class="form-group col-sm-6">
+		                                                <label for="city">City</label>
+		                                                <input type="text" class="form-control form-control-sm" id="newtextcity" name="newtextcity" placeholder="City" value="">
+		                                            </div>
+		                                            <div class="form-group col-sm-6">
+		                                                <label for="zip">Zip</label>
+		                                                <input type="text" class="form-control form-control-sm" id="newtextzip" name="newtextzip" placeholder="Zip Code" value="">
+		                                            </div>
+		                                        </div>                                            
+	                                        
+		                                 </div>
+		                             </div> 
+								</div>
+							
+						</div>	<!-- End of Left Pane -->
+						<!-- Right Pane -->
+						
+						
+								<div class="form-row form-inline">
+										<div class="col-md-12">
+			                            	<div class="text-sm-right button-list" id="demo-custom-toolbar2">
+						                    	<button type="submit" class="btn btn-primary waves-effect waves-light" id="btn-customer-shipping"> Save Customer and Shipping Info</button>
+						                    </div>
+		                            	</div>
+		                        </div>
+						 </form>		
+					</div>
+			  </div>
+			  <!-- End of Modal Body -->
+		</div>
+</div>
+
+					    

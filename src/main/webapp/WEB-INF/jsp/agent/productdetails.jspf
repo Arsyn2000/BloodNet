@@ -1,0 +1,81 @@
+<div class="modal fade" id="productdetailsModal" tabindex="-1" role="dialog" aria-labelledby="orderdetailsModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-full">
+		<div class="modal-content" >
+        	<div class="modal-header">
+            	<h4 class="modal-title" id="orderdetailsModalLabel">Product Details</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+			</div>
+            
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-lg-8">
+							<div class="card">
+                				<div class="card-body">
+                					<h2>Description</h2>
+                					<p id="description">
+                						
+                					</p>
+                				</div>
+                			</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="row">
+								<div class="col-lg-12"> <!--  Details -->
+									<div class="card">
+		                				<div class="card-body">
+		                					<h2 id="title">Title</h2>
+		                					<span class="col-sm-6" id="vendor">
+		                						
+		                					</span>
+		                					<span class="col-sm-6" id="productType">
+		                						
+		                					</span>
+		                				</div>
+		                			</div>
+		                			<div class="card">
+		                				<div class="card-body">
+		                					 <div class="table-responsive" style="max-height:375px">
+			                                            <table class="table table-centered" id="productVariants">
+			                                                <thead>
+			                                                    <tr>
+			                                                    	<th>Sr #</th>
+			                                                    	<th>Title</th>
+			                                                        <th>Unit Price</th>
+			                                                        <th>Quantity</th>
+			                                                    </tr>
+			                                                </thead>
+			                                                <tbody>
+			                                                    
+			                                                </tbody>
+			                                            </table>
+			                                        </div> <!-- end .table-responsive-->
+				                				</div>
+				                		</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-12">	<!--  Carousel -->
+									<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+		                                <div class="carousel-inner" role="listbox" id="carouselData">
+		                                    
+		                                </div>
+		                                <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+		                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		                                    <span class="sr-only">Previous</span>
+		                                </a>
+		                                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+		                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+		                                    <span class="sr-only">Next</span>
+		                                </a>
+		                            </div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>				
+		</div>
+	</div>
+</div>
+					    

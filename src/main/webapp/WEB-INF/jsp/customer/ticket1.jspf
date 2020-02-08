@@ -1,0 +1,46 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<div class="Polaris-Tabs__Panel" role="tabpanel" aria-labelledby="help" tabindex="-1" id="support_tabc">
+	<div class="Polaris-Card__Section">
+    <div class="Polaris-Page__Content">
+      	<div style="-top-bar-background: #00848e; - -top-bar-color: #f9fafb; - -top-bar-background-lighter: #1d9ba4;">
+		</div>
+		<br/> 
+            <div style="--top-bar-background:#00848e; --top-bar-color:#f9fafb; --top-bar-background-lighter:#1d9ba4;">
+  <div class="Polaris-Card">
+    <div class="Polaris-ResourceList__ResourceListWrapper">
+      <ul class="Polaris-ResourceList" aria-live="polite">
+      <li class="Polaris-ResourceList__ItemWrapper">
+      <c:forEach items="${listSupportData}" var="val">
+      <c:if  test="${val.status == 'OPEN'}"> 
+      <%@ include file="reply.jspf" %>
+      	</c:if> 
+       <c:if  test="${val.status == 'CLOSE'}"> 
+            <h3 class="h4 mar-no">Issue Closed...</h3>
+         </c:if> 
+      </li>
+        <li class="Polaris-ResourceList__ItemWrapper">
+          <div class="Polaris-ResourceList-Item" data-href="customers/341"><a aria-describedby="341" aria-label="View details for Mae Jemison" class="Polaris-ResourceList-Item__Link" tabindex="0" id="ResourceListItemOverlay21" href="customers/341" data-polaris-unstyled="true"></a>
+            <div class="Polaris-ResourceList-Item__Container" id="341">
+              <div class="Polaris-ResourceList-Item__Owned">
+                <div class="Polaris-ResourceList-Item__Media"><span aria-label="Mae Jemison" role="img" class="Polaris-Avatar Polaris-Avatar--styleSix Polaris-Avatar--sizeMedium Polaris-Avatar--hasImage"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBkPSJNLS4wMi0uMDFoMTAwdjEwMGgtMTAweiIgZmlsbD0iI2ZmZTBjMyIvPjxwYXRoIGZpbGw9IiNmZjk2N2QiIGQ9Ik0wIDBoNjkuNDF2MTAwSDB6Ii8+PHBhdGggZD0iTTY5LjkyIDB2NDQuMzJMNTEuMzQgNTV2NDVIMTAwVjB6IiBmaWxsPSIjZmZlMGMzIi8+PHBhdGggZmlsbD0iIzMyY2FjNiIgZD0iTTM5LjMyIDc2YTExLjg1IDExLjg1IDAgMCAwIDEyIDExLjYyVjc2Ii8+PHBhdGggZmlsbD0iIzAwOTc5NiIgZD0iTTM5LjMyIDc2YTEyIDEyIDAgMCAxIDEyLTExLjgyVjc2Ii8+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNNDMuNzQgMTkuODNhMTIuODIgMTIuODIgMCAxIDEtMjUuNjQgMCIvPjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS13aWR0aD0iNCIgZD0iTTI3LjM5IDMxLjZsLTEuNTggNS45Nm05LjM3LTUuNzJsMi41NSA1LjQ3bTQuMjYtOS44NWwzLjUzIDQuNW0tMjUuNDMtNC41bC0zLjUzIDQuNSIvPjwvc3ZnPgo=" class="Polaris-Avatar__Image" alt="" role="presentation"></span></div>
+              </div>
+              <div class="Polaris-ResourceList-Item__Content">
+                <h3><span class="Polaris-TextStyle--variationStrong">${val.subject}</span></h3>
+                <div>${val.description} <br><br>
+                <i class="far fa-clock"></i>
+                ${val.createdAt}
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        </c:forEach>
+      </ul>
+    </div>
+  </div>
+</div>
+  
+          </div>
+        </div>
+      </div>
