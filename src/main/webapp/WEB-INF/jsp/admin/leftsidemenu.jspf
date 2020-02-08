@@ -8,8 +8,8 @@
 					</a>
 				</li>
 				<li>
-					<a href="admin/orders"> 
-						<i class="fe-shopping-cart"></i> <span> Orders </span>	
+					<a href="admin/category"> 
+						<i class="fe-shopping-cart"></i> <span> Category </span>	
 					</a>
 				</li>
 					

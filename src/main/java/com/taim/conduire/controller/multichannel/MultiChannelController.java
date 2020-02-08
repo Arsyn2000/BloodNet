@@ -25,9 +25,6 @@ import com.taim.conduire.domain.AccountData;
 import com.taim.conduire.service.AccountDataService;
 import com.taim.constants.ShopifyConstantCodes;
 
-import static com.taim.conduire.constants.ConstantCodes.SHOPIFY_CLIENT_ID;
-import static com.taim.conduire.constants.ConstantCodes.SHOPIFY_CLIENT_SCOPES;
-import static com.taim.conduire.constants.ConstantCodes.SHOPIFY_REDIRECT_URL;
 import java.io.IOException;
 import java.net.URLDecoder;
 import java.security.InvalidKeyException;

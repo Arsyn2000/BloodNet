@@ -27,7 +27,7 @@
                             <div class="col-12">
                                 <div class="page-title-box">
                                     
-                                    <h4 class="page-title">Agents</h4>
+                                    <h4 class="page-title">Category</h4>
                                 </div>
                             </div>
                         </div>     
@@ -43,8 +43,8 @@
                                             <div class="">
                                                 <div class="text-sm-left mt-3 mt-lg-0" id="demo-custom-toolbar2">
                                                 
-                                                    <a href="#custom-modal" class="btn btn-success waves-effect waves-light mr-1" data-animation="fadein" data-plugin="custommodal" data-clearform="yes" data-formid="agentCreateform"
-                                                     data-overlayColor="#38414a" id="agent_anchor"><i class="fe-user-plus"></i> Add Agent</a>
+                                                    <a href="#custom-modal" class="btn btn-success waves-effect waves-light mr-1" data-animation="fadein" data-plugin="custommodal" data-clearform="yes" data-formid="categoryCreateform"
+                                                     data-overlayColor="#38414a" id="agent_anchor"><i class="fe-plus-circle"></i> Add Category</a>
                                                      
                                                 </div>
                                                
@@ -52,14 +52,13 @@
                                         </div>
                 
                                         <div class="table-responsive">
-		                    				<table id="agent-listing" class="table table-hover m-0 table-centered dt-responsive w-100">
+		                    				<table id="category-listing" class="table table-hover m-0 table-centered dt-responsive w-100">
 						                      <thead>
 						                        <tr>
-						                            <th>First Name</th>
-						                            <th>Last Name</th>
-						                            <th>User Name</th>
-						                            <th>Email Address</th>
-						                            <th>Account Status</th>
+						                            <th>Name</th>
+						                            <th>Alias</th>
+						                            <th>Description</th>
+						                            <th>Status</th>
 						                            <th>Edit</th>
 						                            <th>Remove</th>
 						                        </tr>
@@ -83,74 +82,53 @@
 		            <button type="button" class="close" onclick="Custombox.modal.close();">
 		                <span>&times;</span><span class="sr-only">Close</span>
 		            </button>
-		            <h4 class="custom-modal-title">Agent Creation</h4>
+		            <h4 class="custom-modal-title">Category Creation</h4>
 		            <div class="custom-modal-text text-left">
-		                <form class="parsley-examples" id="agentCreateform" name="agentCreateform" method="POST" action="agent/create" >
+		                <form class="parsley-examples" id="categoryCreateform" name="categoryCreateform" method="POST" action="admin/category-create" >
 		                	<div class="row">
-								<div class="col-md-6 grid-margin">
+								<div class="col-md-9 grid-margin">
 				                    <div class="form-group">
-							            <label for="firstname">First Name</label>
-							            <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First Name" parsley-trigger="change" required >
-										<input type="hidden" id="agentid" name="agentid">
+							            <label for="name">Category Name</label>
+							            <input type="text" class="form-control" id="name" name="name" placeholder="Category Name" parsley-trigger="change" required >
+										<input type="hidden" id="categoryid" name="categoryid">
 							        </div>
 							    </div>
-								<div class="col-md-6 grid-margin">
+								<div class="col-md-3 grid-margin">
 				                    <div class="form-group">
-							            <label for="lastname">Last Name</label>
-							            <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name" parsley-trigger="change" required>
+							            <label for="alias">Alias</label>
+							            <input type="text" class="form-control" id="alias" name="alias" placeholder="Alias" parsley-trigger="change" required>
 							        </div>
 							      </div>
 							   </div>
 							   <div class="row">
-								<div class="col-md-6 grid-margin">
+								<div class="col-md-12 grid-margin">
 				                    <div class="form-group">
-							            <label for="username">User Name</label>
-							            <input type="text" class="form-control" id="username" name="username" placeholder="User Name" parsley-trigger="change" required>
-							            <div id="hiddenstatus"></div>
+							            <label for="description">Description</label>
+							            <input type="text" class="form-control" id="description" name="description" placeholder="Description" parsley-trigger="change" required>
 						          	</div>
 						        </div>
-								<div class="col-md-6 grid-margin">
-				                   <div class="form-group">
-							            <label for="emailaddress">Email address</label>
-							            <input type="email" class="form-control" id="emailaddress" name="emailaddress" placeholder="Email" parsley-trigger="change" required>
-							       </div>
-							     </div>
-							   </div>
-							   <div class="row">
-							      <div class="col-md-6 grid-margin">
-				 				   <div class="form-group" id="password_div">
-							            <label for="password">Password</label>
-							            <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
-						           </div>
-						          </div>
-						          <div class="col-md-6 grid-margin">
-						           <div class="form-group" id="confirm_password_div">
-							            <label for="confirm_password">Confirm Password</label>
-							            <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Confirm Password" data-parsley-equalto="#password" required>
-							       </div>
-							      </div>
-							     </div>
-							    <div class="row">
-							      <div class="col-md-6 grid-margin">
-				 				   <div class="form-group" id="line_number">
-							            <label for="password">Line Number</label>
-							            <input type="text" class="form-control" id="line_number" name="line_number" placeholder="Line Number" required>
-						           </div>
-						          </div>
-						          
-							     </div>
-							     
-				                    <div class="text-right">
+							   
+							 </div>
+							 <div class="row">
+							 	<div class="col-md-6 grid-margin">
+							 		<div class="text-left">
+							 			<input type="checkbox" chekced="true" data-plugin="switchery" data-color="#039cfd" data-switchery="true" style="display: none;" id="categorystatus" name="categorystatus" class="js-switch">
+							 			
+							 		</div>	
+							 	</div>
+							 	<div class="col-md-6 grid-margin">
+									<div class="text-right">
 				                        <button type="submit" class="btn btn-success waves-effect waves-light" id="btn-submit">Save</button>
 				                        <button type="button" class="btn btn-danger waves-effect waves-light m-l-10" onclick="Custombox.modal.close();">Cancel</button>
-				                    </div>
+				                    </div> 	
+							 	</div>
+							 </div>
 		                </form>
            			 </div>
-           			 
        			 </div> 
        			 <div class="toast fade" role="alert" aria-live="assertive" aria-atomic="true"  data-autohide="true" style="position: absolute; top: 12%; right: 1%;" >
 					  <div class="toast-header">
-					    <strong class="mr-auto text-primary">Agents</strong>
+					    <strong class="mr-auto text-primary">Category</strong>
 					    <small class="text-muted"></small>
 					    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
 					  </div>
@@ -165,26 +143,36 @@
     	<%@ include file="scripts.jspf"%>
     	<script src="${pageContext.request.contextPath}/assets/js/pages/jquery.validate.min.js"></script>
     	<script src="${pageContext.request.contextPath}/assets/js/pages/jquery-form.min.js"></script>
-    	
+    	<script src="${pageContext.request.contextPath}/assets/libs/switchery/switchery.min.js"></script>
     	<script>
-    	function editAgent(vAgentCode) {
-			 
-			console.log('Edit ' + vAgentCode);
+    	
+    	function changeSwitchery(element, checked) {
+    		  if ( ( element.is(':checked') && checked == false ) || ( !element.is(':checked') && checked == true ) ) {
+    		    element.parent().find('.switchery').trigger('click');
+    		  }
+    		}
+    	
+    	function editCategory(vCategoryCode) {
+    		
+			var element = $('#categorystatus');
+			console.log('Edit ' + vCategoryCode);
 			$.ajax({
   	  	      type: 'POST',
-  	  	      url: "agent/get-agent/"+vAgentCode,
+  	  	      url: "admin/get-category/"+vCategoryCode,
   	  	      dataType: "json",
   	  	  	  success: function(resultData) {
-  	  	  		$('#agentCreateform').trigger("reset");
-  	  	  		$('#agentid').val(resultData.id);
-  	  	  		$('#firstname').val(resultData.fname);
-  	  	  		$('#lastname').val(resultData.lname);
-  	  	  		$('#username').val(resultData.username);
-  	  	  		$('#emailaddress').val(resultData.email);
-  	  	  		$('#password').val(resultData.password);
-  	  	  		$('#confirm_password').val(resultData.password);
-  	  	  		console.log('ln ' + resultData.lineNumber);	
-  	  	  		$('#line_number').val(resultData.lineNumber);
+  	  	  		$('#categoryCreateform').trigger("reset");
+  	  	  		$('#categoryid').val(resultData.id);
+  	  	  		$('#name').val(resultData.name);
+  	  	  		$('#alias').val(resultData.alias);
+  	  	  		$('#description').val(resultData.description);
+  	  	  		console.log(resultData.status);
+  	  	  		if(resultData.status == "on"){
+  	  	  			changeSwitchery(element, true);
+  	  	  		}else{
+	  	  	  		console.log('inside else');
+	  	  	  		changeSwitchery(element, false);
+  	  	  		}
   	  	  		
               	var modal = new Custombox.modal({
                     content: {
@@ -203,8 +191,11 @@
 
     	
     		$(document).ready(function(){
+    			var elem = document.querySelector('.js-switch');
+    			var init = new Switchery(elem);
     			
-    			var t = $('#agent-listing').DataTable({
+    			
+    			var t = $('#category-listing').DataTable({
     				language:{
     					paginate:{
     						previous:"<i class='mdi mdi-chevron-left'>",
@@ -216,17 +207,18 @@
     			 		$(".dataTables_paginate > .pagination").addClass("pagination-rounded")
     			 	},
         	        "columns":[
-        	        		{"data":"fname"},
-        	        		{"data":"lname"},
-        	        		{"data":"username"},
-        	        		{"data":"email"},
-        	        		{"data":"accountstatus"},
-        	        		{"data":"fname", "bSortable": false ,"render": function ( data, type, row ) {
+        	        		{"data":"name"},
+        	        		{"data":"alias"},
+        	        		{"data":"description"},
+        	        		{"data":"status", "render": function(data,type,row){
+        	        			return data.toUpperCase();
+        	        		}},
+        	        		{"data":"name", "bSortable": false ,"render": function ( data, type, row ) {
              	        		return '<div class="col-6"><div class="avatar-sm bg-success shadow-lg rounded" style="background-color:#4fc6e1!important">'+
-             	        		'<a href="javascript:void(0)" onClick="editAgent('+row.id+')" ><i class="fe-edit-1 avatar-title font-22 text-white"></i></a></div></div>';
+             	        		'<a href="javascript:void(0)" onClick="editCategory('+row.id+')" ><i class="fe-edit-1 avatar-title font-22 text-white"></i></a></div></div>';
                             }},
-                            {"data":"fname", "bSortable": false ,"render": function ( data, type, row ) {
-             	        		return '<div class="col-6"><div class="avatar-sm bg-success shadow-lg rounded" style="background-color:#ed2643!important"><a href="" class="remove"><i class="fe-user-x avatar-title font-22 text-white"></i></a></div></div>';
+                            {"data":"name", "bSortable": false ,"render": function ( data, type, row ) {
+             	        		return '<div class="col-6"><div class="avatar-sm bg-success shadow-lg rounded" style="background-color:#ed2643!important"><a href="" class="remove"><i class="fe-x avatar-title font-22 text-white"></i></a></div></div>';
                             }}
         	        		],
         	        "responsive": true,
@@ -235,7 +227,7 @@
         	        "bDestroy": true,
         	        "bPaginate": true,
         	        "bProcessing": true,
-        	        "ajax": {"url": "agent/get-agents-for-datatable","type":"POST", "contentType": "application/json","data": function(d) {
+        	        "ajax": {"url": "admin/get-category-for-datatable","type":"POST", "contentType": "application/json","data": function(d) {
         	            return JSON.stringify(d);
         	        	}
         	        },
@@ -243,18 +235,18 @@
         	        
         	    });
         		
-    			 $('#demo-custom-toolbar2').appendTo($("#agent-listing_wrapper div.col-sm-7"));
+    			 $('#demo-custom-toolbar2').appendTo($("#category-listing_wrapper div.col-sm-7"));
     			
     			$(".parsley-examples").parsley();
     		
     			
-    			$('#agentCreateform').validate({
+    			$('#categoryCreateform').validate({
     				submitHandler: function(form) {
     	                $(form).ajaxSubmit(function(resp) {
     	                	if(resp == 'Yes'){
     	                		 $.toast({ 
     	    	    	  	    	  heading: 'Success',
-    	    	    	  	    	  text :'Agent updated/created successfully !!!', 
+    	    	    	  	    	  text :'Category updated/created successfully !!!', 
     	    	    	  	    	  icon : 'success',
     	    	    	  	    	  showHideTransition : 'slide',  // It can be plain, fade or slide
     	    	    	  	    	  hideAfter: 5000,
@@ -263,7 +255,7 @@
 			        		 }else{
 			        			 $.toast({ 
 			 	    	  	    	  heading: 'Error',
-			 	    	  	    	  text : 'Unable to create Agent !!!', 
+			 	    	  	    	  text : 'Unable to create Category !!!', 
 			 	    	  	    	  icon : 'error',
 			 	    	  	    	  showHideTransition : 'slide',  // It can be plain, fade or slide
 			 	    	  	    	  hideAfter: 5000,
@@ -275,17 +267,17 @@
     	                });
     	            },
     	            rules: {
-    	            	username: {
+    	            	name: {
     	                  required: true,
     	                  remote: {
-    	                      url: "agent/check-unique-username",
+    	                      url: "admin/check-unique-name",
     	                      type: "post",
     	                      data: {
     	                        username: function() {
-    	                          return $( "#username" ).val();
+    	                          return $( "#name" ).val();
     	                        },
     	                        id: function() {
-      	                          return $( "#agentid" ).val();
+      	                          return $( "#categoryid" ).val();
       	                        }
     	                      }
     	                  }
@@ -293,20 +285,20 @@
     	              },
     	             messages:{
     	            	 username:{
-    	            		 remote: "Username already exists !!"
+    	            		 remote: "Category already exists !!"
     	            	 }
     	             }
     			});
     			
     			
-    			 $('#agent-listing').on( 'click', 'a.remove',function (e) {
+    			 $('#category-listing').on( 'click', 'a.remove',function (e) {
     				 e.preventDefault();
     				 	$(this).closest('tr').addClass('selected');
-    	     	    	var vAgentCode = t.rows('.selected').data()[0].id; 
-    	     	    	console.log('Remove' + vAgentCode);
+    	     	    	var vCategoryCode = t.rows('.selected').data()[0].id; 
+    	     	    	console.log('Remove' + vCategoryCode);
     	     	    	$.ajax({
     	     	    	      type: 'POST',
-    	     	    	      url: "agent/delete-agent/"+vAgentCode,
+    	     	    	      url: "admin/delete-category/"+vCategoryCode,
     	     	    	      dataType: "text",
     	     	    	      success: function(resp) { 
     	     	    	    	 $.toast({ 
