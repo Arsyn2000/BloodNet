@@ -13,6 +13,4 @@ import com.taim.conduire.domain.CategoryData;
 public interface CategoryDataRepository extends JpaRepository<CategoryData, Integer> {
     CategoryData findByName(String name);
     List<CategoryData> findByStatus(String status);
-    
-    
 }

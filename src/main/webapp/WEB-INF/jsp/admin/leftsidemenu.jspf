@@ -3,43 +3,55 @@
 		<div id="sidebar-menu">
 			<ul class="metismenu" id="side-menu">
 				<li>
-					<a href="admin/dashboard"> <i class="fe-airplay"></i>
+					<a href="admin"> <i class="fe-airplay"></i>
 						<span> Dashboards </span>
 					</a>
 				</li>
 				<li>
 					<a href="admin/category"> 
-						<i class="fe-shopping-cart"></i> <span> Category </span>	
+						<i class="fe-grid"></i> <span> Category </span>	
 					</a>
 				</li>
 					
 				<li>
-					<a href="admin/products"> 
-						<i class="fe-package"></i> <span> Products </span>	
+					<a href="admin/subcategory"> 
+						<i class="fe-package"></i> <span> Sub Category </span>	
+					</a>
+				</li>
+				
+				<li>
+					<a href="admin/product"> 
+						<i class="fe-box"></i> <span> Products </span>	
+					</a>
+				</li>
+				
+				<li>
+					<a href="admin/company"> 
+						<i class="fe-layers"></i> <span> Company </span>	
 					</a>
 				</li>
 				
 				<li>
 					<a href="admin/reports"> 
-						<i class="fe-list"></i> <span> Reports </span>	
-					</a>
-				</li>
-				
-				<li>
-					<a href="admin/stores"> 
-						<i class="fe-layers"></i> <span> Stores </span>	
+						<i class="fe-activity"></i> <span> Reports </span>	
 					</a>
 				</li>
 				
 				<li>
 					<a href="admin/agents"> 
-						<i class="fe-users"></i> <span> Agents </span>	
+						<i class="fe-users"></i> <span> Staff </span>	
+					</a>
+				</li>
+				
+				<li>
+					<a href="admin/agents"> 
+						<i class="fe-pocket"></i> <span> Distributors </span>	
 					</a>
 				</li>
 				
 				<li>
 					<a href="admin/settings"> 
-						<i class="fe-cpu"></i> <span> Setting </span>	
+						<i class="fe-settings"></i> <span> Setting </span>	
 					</a>
 				</li>
 			</ul>

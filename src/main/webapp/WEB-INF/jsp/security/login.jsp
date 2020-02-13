@@ -7,13 +7,13 @@
     <head>
     	<script>document.write('<base href="' + location.protocol + '//' + location.host + '${pageContext.request.contextPath}/' + '" />');</script>
         <meta charset="utf-8" />
-        <title>Ultimate Parcel</title>
+        <title>Shri Stationery</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <link rel="shortcut icon" href="assets/images/shri-favicon.ico">
 
         <!-- App css -->
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -32,9 +32,9 @@
 
                             <div class="card-body p-4">
                                 
-                                <div class="text-center w-75 m-auto">
+                                <div class="text-center m-auto">
                                     <a href="index.html">
-                                        <span><img src="assets/images/UPLOGO.png" alt="" height="22"></span>
+                                        <span><img src="assets/images/shri-logo-dark.png" alt="" width="75%"></span>
                                     </a>
                                     <p class="text-muted mb-4 mt-3">Enter your email address and password to access admin panel.</p>
                                 </div>
@@ -43,12 +43,12 @@
 
                                     <div class="form-group mb-3">
                                         <label for="emailaddress">Username</label>
-                                        <input class="form-control" type="text" id="emailaddress" name="username" required="" placeholder="Enter your username" value="admin">
+                                        <input class="form-control" type="text" id="emailaddress" name="username" required="" placeholder="Enter your username" value="admin@shristationery.com">
                                     </div>
 
                                     <div class="form-group mb-3">
                                         <label for="password">Password</label>
-                                        <input class="form-control" type="password" required="" id="password" name="password" placeholder="Enter your password" value="Honey@58259">
+                                        <input class="form-control" type="password" required="" id="password" name="password" placeholder="Enter your password" value="admin@shristationery.com">
                                     </div>
 
                                     <div class="form-group mb-3">
@@ -88,7 +88,7 @@
 
 
         <footer class="footer footer-alt">
-            2015 - 2019 &copy; Ultimate Parcel <a href="" class="text-white-50">Nirvasiana</a> 
+            2014 - 2020 &copy; Shri Stationery | Developed by <a href="http://www.prius-solutions.co.in" class="text-white-50">PRIUS Solutions</a> 
         </footer>
 
         <!-- Vendor js -->

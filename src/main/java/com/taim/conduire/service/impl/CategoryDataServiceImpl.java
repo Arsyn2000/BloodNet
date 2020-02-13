@@ -13,6 +13,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -42,4 +43,14 @@ public class CategoryDataServiceImpl implements CategoryDataService {
 	public List<CategoryData> findByStatus(String status) {
 		return repository.findByStatus(status);
 	}
+
+	@Override
+	public List<CategoryData> findAll() {
+		return repository.findAll(sortByNameAsc());
+	}
+	
+	 private Sort sortByNameAsc() {
+	        return new Sort(Sort.Direction.ASC, "name");
+	 }
+	
 }

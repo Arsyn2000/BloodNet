@@ -2,12 +2,12 @@
 <html lang="en">
     <%@ include file="head.jspf"%>
 	<style>
-		#category-listing tbody tr.selected {
+		#subcategory-listing tbody tr.selected {
     			    background-color: #eeeeee;
     			    
     			}
     			
-    	#category-listing tbody tr.selected td{
+    	#subcategory-listing tbody tr.selected td{
     			    border-color:#eeeeee;
     			}
 	</style>    
@@ -27,7 +27,7 @@
                             <div class="col-12">
                                 <div class="page-title-box">
                                     
-                                    <h4 class="page-title">Category</h4>
+                                    <h4 class="page-title">Sub Category</h4>
                                 </div>
                             </div>
                         </div>     
@@ -43,8 +43,8 @@
                                             <div class="">
                                                 <div class="text-sm-left mt-3 mt-lg-0" id="demo-custom-toolbar2">
                                                 
-                                                    <a href="#custom-modal" class="btn btn-success waves-effect waves-light mr-1" data-animation="fadein" data-plugin="custommodal" data-clearform="yes" data-formid="categoryCreateform"
-                                                     data-overlayColor="#38414a" id="agent_anchor"><i class="fe-plus-circle"></i> Add Category</a>
+                                                    <a href="#custom-modal" class="btn btn-success waves-effect waves-light mr-1" data-animation="fadein" data-plugin="custommodal" data-clearform="yes" data-formid="subcategoryCreateform"
+                                                     data-overlayColor="#38414a" id="agent_anchor" name="agent_anchor"><i class="fe-plus-circle"></i> Add Sub Category</a>
                                                      
                                                 </div>
                                                
@@ -52,9 +52,10 @@
                                         </div>
                 
                                         <div class="table-responsive">
-		                    				<table id="category-listing" class="table table-hover m-0 table-centered dt-responsive w-100">
+		                    				<table id="subcategory-listing" class="table table-hover m-0 table-centered dt-responsive w-100">
 						                      <thead>
 						                        <tr>
+						                        	<th>Category</th>
 						                            <th>Name</th>
 						                            <th>Alias</th>
 						                            <th>Description</th>
@@ -82,15 +83,25 @@
 		            <button type="button" class="close" onclick="Custombox.modal.close();">
 		                <span>&times;</span><span class="sr-only">Close</span>
 		            </button>
-		            <h4 class="custom-modal-title">Category Creation</h4>
+		            <h4 class="custom-modal-title">Sub Category Creation</h4>
 		            <div class="custom-modal-text text-left">
-		                <form class="parsley-examples" id="categoryCreateform" name="categoryCreateform" method="POST" action="admin/category-create" >
+		                <form class="parsley-examples" id="subcategoryCreateform" name="subcategoryCreateform" method="POST" action="admin/subcategory-create" >
+		                	<div class="row">
+		                		<div class="col-md-9 grid-margin">
+		                			<div class="form-group">
+		                				<label for="categoryname">Category</label>
+		                				<select id="categoryname" name="categoryname" class="form-control" required>
+		                					<option value="">Select</option>
+		                				</select>
+		                			</div>
+		                		</div>
+		                	</div>	
 		                	<div class="row">
 								<div class="col-md-9 grid-margin">
 				                    <div class="form-group">
-							            <label for="name">Category Name</label>
-							            <input type="text" class="form-control" id="name" name="name" placeholder="Category Name" parsley-trigger="change" required >
-										<input type="text" id="categoryid" name="categoryid" style="display:none">
+							            <label for="name">Sub Category Name</label>
+							            <input type="text" class="form-control" id="name" name="name" placeholder="Sub Category Name" parsley-trigger="change" required >
+										<input type="text" id="subcategoryid" name="subcategoryid" style="display:none">
 							        </div>
 							    </div>
 								<div class="col-md-3 grid-margin">
@@ -112,7 +123,7 @@
 							 <div class="row">
 							 	<div class="col-md-6 grid-margin">
 							 		<div class="text-left">
-							 			<input type="checkbox" checked="true" data-plugin="switchery" data-color="#039cfd" data-switchery="true" style="display: none;" id="categorystatus" name="categorystatus" class="js-switch">
+							 			<input type="checkbox" checked="true" data-plugin="switchery" data-color="#039cfd" data-switchery="true" style="display: none;" id="subcategorystatus" name="subcategorystatus" class="js-switch">
 							 			
 							 		</div>	
 							 	</div>
@@ -128,7 +139,7 @@
        			 </div> 
        			 <div class="toast fade" role="alert" aria-live="assertive" aria-atomic="true"  data-autohide="true" style="position: absolute; top: 12%; right: 1%;" >
 					  <div class="toast-header">
-					    <strong class="mr-auto text-primary">Category</strong>
+					    <strong class="mr-auto text-primary">Sub Category</strong>
 					    <small class="text-muted"></small>
 					    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
 					  </div>
@@ -152,25 +163,24 @@
     		  }
     		}
     	
-    	function editCategory(vCategoryCode) {
+    	function editSubCategory(vSubCategoryCode) {
     		
-			var element = $('#categorystatus');
-			console.log('Edit ' + vCategoryCode);
+			var element = $('#subcategorystatus');
+			console.log('Edit ' + vSubCategoryCode);
 			$.ajax({
   	  	      type: 'POST',
-  	  	      url: "admin/get-category/"+vCategoryCode,
+  	  	      url: "admin/get-subcategory/"+vSubCategoryCode,
   	  	      dataType: "json",
   	  	  	  success: function(resultData) {
-  	  	  		$('#categoryCreateform').trigger("reset");
-  	  	  		$('#categoryid').val(resultData.id);
+  	  	  		$('#subcategoryCreateform').trigger("reset");
+  	  	  		$('#subcategoryid').val(resultData.id);
   	  	  		$('#name').val(resultData.name);
   	  	  		$('#alias').val(resultData.alias);
   	  	  		$('#description').val(resultData.description);
-  	  	  		console.log(resultData.status);
+  	  	  		$('#categoryname').val(resultData.categoryId);
   	  	  		if(resultData.status == "on"){
   	  	  			changeSwitchery(element, true);
   	  	  		}else{
-	  	  	  		console.log('inside else');
 	  	  	  		changeSwitchery(element, false);
   	  	  		}
   	  	  		
@@ -189,13 +199,30 @@
 			});
 		}
 
+    	function getCategoryForDropDown(){
+    		$.ajax({
+                type: "GET",
+                url:"admin/load-category",
+                success: function (data) {
+                    $.each(data,function(key,val)
+                    {
+                    	console.log(val);
+	                    var div_data="<option value="+val.id+">"+val.name+"</option>";
+	                    console.log(div_data);
+	                    $(div_data).appendTo('#categoryname'); 
+                    });  
+                  }
+              });
+    	}
+    	
     	
     		$(document).ready(function(){
     			var elem = document.querySelector('.js-switch');
     			var init = new Switchery(elem);
     			
+    			getCategoryForDropDown();
     			
-    			var t = $('#category-listing').DataTable({
+    			var t = $('#subcategory-listing').DataTable({
     				language:{
     					paginate:{
     						previous:"<i class='mdi mdi-chevron-left'>",
@@ -207,6 +234,7 @@
     			 		$(".dataTables_paginate > .pagination").addClass("pagination-rounded")
     			 	},
         	        "columns":[
+        	        		{"data":"categoryname"},
         	        		{"data":"name"},
         	        		{"data":"alias"},
         	        		{"data":"description"},
@@ -215,7 +243,7 @@
         	        		}},
         	        		{"data":"name", "bSortable": false ,"render": function ( data, type, row ) {
              	        		return '<div class="col-6"><div class="avatar-sm bg-success shadow-lg rounded" style="background-color:#4fc6e1!important">'+
-             	        		'<a href="javascript:void(0)" onClick="editCategory('+row.id+')" ><i class="fe-edit-1 avatar-title font-22 text-white"></i></a></div></div>';
+             	        		'<a href="javascript:void(0)" onClick="editSubCategory('+row.id+')" ><i class="fe-edit-1 avatar-title font-22 text-white"></i></a></div></div>';
                             }},
                             {"data":"name", "bSortable": false ,"render": function ( data, type, row ) {
              	        		return '<div class="col-6"><div class="avatar-sm bg-success shadow-lg rounded" style="background-color:#ed2643!important"><a href="" class="remove"><i class="fe-x avatar-title font-22 text-white"></i></a></div></div>';
@@ -227,26 +255,27 @@
         	        "bDestroy": true,
         	        "bPaginate": true,
         	        "bProcessing": true,
-        	        "ajax": {"url": "admin/get-category-for-datatable","type":"POST", "contentType": "application/json","data": function(d) {
+        	        "ajax": {"url": "admin/get-subcategory-for-datatable","type":"POST", "contentType": "application/json","data": function(d) {
         	            return JSON.stringify(d);
-        	        	}
+        	        	},
+        	         "order": [[ 1, "asc" ],[ 2, "asc" ]]
         	        },
     			 	"dom": '<\'row\'<"col-sm-7"><\'col-sm-3\'f><\'col-sm-2\'l>>rt<\'col-sm-12\'i>p'
         	        
         	    });
         		
-    			 $('#demo-custom-toolbar2').appendTo($("#category-listing_wrapper div.col-sm-7"));
+    			 $('#demo-custom-toolbar2').appendTo($("#subcategory-listing_wrapper div.col-sm-7"));
     			
     			$(".parsley-examples").parsley();
     		
     			
-    			$('#categoryCreateform').validate({
+    			$('#subcategoryCreateform').validate({
     				submitHandler: function(form) {
     	                $(form).ajaxSubmit(function(resp) {
     	                	if(resp == 'Yes'){
     	                		 $.toast({ 
     	    	    	  	    	  heading: 'Success',
-    	    	    	  	    	  text :'Category updated/created successfully !!!', 
+    	    	    	  	    	  text :'Sub Category updated/created successfully !!!', 
     	    	    	  	    	  icon : 'success',
     	    	    	  	    	  showHideTransition : 'slide',  // It can be plain, fade or slide
     	    	    	  	    	  hideAfter: 5000,
@@ -255,7 +284,7 @@
 			        		 }else{
 			        			 $.toast({ 
 			 	    	  	    	  heading: 'Error',
-			 	    	  	    	  text : 'Unable to create Category !!!', 
+			 	    	  	    	  text : 'Unable to create Sub Category !!!', 
 			 	    	  	    	  icon : 'error',
 			 	    	  	    	  showHideTransition : 'slide',  // It can be plain, fade or slide
 			 	    	  	    	  hideAfter: 5000,
@@ -263,42 +292,52 @@
 			 	    	  	    	});
 			        		 }
     	                	 t.ajax.reload();
-    	                	Custombox.modal.close();
+    	                	 $('#subcategoryCreateform').trigger("reset");
+    	                	 $('#subcategoryid').val("");
+    	                	 Custombox.modal.close();
     	                });
     	            },
     	            rules: {
     	            	name: {
     	                  required: true,
     	                  remote: {
-    	                      url: "admin/check-unique-category-name",
+    	                      url: "admin/check-unique-subcategory-name",
     	                      type: "post",
     	                      data: {
     	                        username: function() {
     	                          return $( "#name" ).val();
     	                        },
     	                        id: function() {
-      	                          return $( "#categoryid" ).val();
+      	                          return $( "#subcategoryid" ).val();
       	                        }
     	                      }
     	                  }
+    	                },
+    	                categoryname:{
+    	                	required:true
     	                }
     	              },
     	             messages:{
     	            	 username:{
-    	            		 remote: "Category already exists !!"
+    	            		 remote: "Sub Category already exists !!"
+    	            	 },
+    	            	 categoryname:{
+    	            		 required:"Please select category"
     	            	 }
     	             }
     			});
     			
     			
-    			 $('#category-listing').on( 'click', 'a.remove',function (e) {
+    			
+    			
+    			 $('#subcategory-listing').on( 'click', 'a.remove',function (e) {
     				 e.preventDefault();
     				 	$(this).closest('tr').addClass('selected');
-    	     	    	var vCategoryCode = t.rows('.selected').data()[0].id; 
-    	     	    	console.log('Remove' + vCategoryCode);
+    	     	    	var vSubCategoryCode = t.rows('.selected').data()[0].id; 
+    	     	    	console.log('Remove' + vSubCategoryCode);
     	     	    	$.ajax({
     	     	    	      type: 'POST',
-    	     	    	      url: "admin/delete-category/"+vCategoryCode,
+    	     	    	      url: "admin/delete-subcategory/"+vSubCategoryCode,
     	     	    	      dataType: "text",
     	     	    	      success: function(resp) { 
     	     	    	    	 $.toast({ 
