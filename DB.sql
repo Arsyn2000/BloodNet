@@ -13,6 +13,7 @@
 
 
 -- Dumping database structure for shristationery
+DROP DATABASE IF EXISTS `shristationery`;
 CREATE DATABASE IF NOT EXISTS `shristationery` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `shristationery`;
 
@@ -51,7 +52,7 @@ CREATE TABLE IF NOT EXISTS `account` (
   UNIQUE KEY `account_username_uindex` (`username`)
 ) ENGINE=InnoDB AUTO_INCREMENT=130 DEFAULT CHARSET=utf8;
 
--- Dumping data for table shristationery.account: ~0 rows (approximately)
+-- Dumping data for table shristationery.account: ~1 rows (approximately)
 DELETE FROM `account`;
 /*!40000 ALTER TABLE `account` DISABLE KEYS */;
 INSERT INTO `account` (`id`, `first_name`, `last_name`, `email`, `username`, `password`, `account_status`, `account_type`, `country`, `state`, `city`, `pin`, `hphone`, `wphone`, `createdate`, `system_generated`, `welcome_email_sent`, `verification_code`, `visible`, `access_token`, `shopify_store_url`, `device_token`, `arise_uname`, `arise_upass`, `arise_connected`, `store_name`, `shopify_bill_id`, `profit_margin`) VALUES
@@ -167,7 +168,7 @@ CREATE TABLE IF NOT EXISTS `distributor` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Dumping data for table shristationery.distributor: ~0 rows (approximately)
+-- Dumping data for table shristationery.distributor: ~1 rows (approximately)
 DELETE FROM `distributor`;
 /*!40000 ALTER TABLE `distributor` DISABLE KEYS */;
 INSERT INTO `distributor` (`id`, `name`, `alias`, `address`, `phone1`, `phone2`, `gstin`, `email`, `website`, `contact_person`, `create_date`, `status`, `last_modified_by`, `modified_timestamp`) VALUES
@@ -230,7 +231,7 @@ CREATE TABLE IF NOT EXISTS `persistent_logins` (
   PRIMARY KEY (`series`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table shristationery.persistent_logins: ~25 rows (approximately)
+-- Dumping data for table shristationery.persistent_logins: ~26 rows (approximately)
 DELETE FROM `persistent_logins`;
 /*!40000 ALTER TABLE `persistent_logins` DISABLE KEYS */;
 INSERT INTO `persistent_logins` (`series`, `username`, `token`, `last_used`) VALUES
