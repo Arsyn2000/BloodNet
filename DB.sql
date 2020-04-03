@@ -95,7 +95,7 @@ CREATE TABLE IF NOT EXISTS `category` (
   `last_modified_by` int(11) NOT NULL,
   `modified_timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8mb4;
 
 -- Dumping data for table shristationery.category: ~3 rows (approximately)
 DELETE FROM `category`;
@@ -124,7 +124,7 @@ CREATE TABLE IF NOT EXISTS `company` (
   `last_modified_by` int(11) DEFAULT NULL,
   `modified_timestamp` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8mb4;
 
 -- Dumping data for table shristationery.company: ~0 rows (approximately)
 DELETE FROM `company`;
@@ -148,7 +148,7 @@ CREATE TABLE IF NOT EXISTS `distributor` (
   `last_modified_by` int(11) DEFAULT NULL,
   `modified_timestamp` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8mb4;
 
 -- Dumping data for table shristationery.distributor: ~1 rows (approximately)
 DELETE FROM `distributor`;
@@ -176,7 +176,7 @@ CREATE TABLE IF NOT EXISTS `log_status` (
   `package_name` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `logging_level` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8mb4;
 
 -- Dumping data for table shristationery.log_status: ~0 rows (approximately)
 DELETE FROM `log_status`;
@@ -209,37 +209,6 @@ CREATE TABLE IF NOT EXISTS `persistent_logins` (
   PRIMARY KEY (`series`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table shristationery.persistent_logins: ~26 rows (approximately)
-DELETE FROM `persistent_logins`;
-/*!40000 ALTER TABLE `persistent_logins` DISABLE KEYS */;
-INSERT INTO `persistent_logins` (`series`, `username`, `token`, `last_used`) VALUES
-	('0qzBL20tY0XDBZHa6yLoSg==', 'admin@shristationery.com', 'jAASIK+LK9QgxrYKh5nG9A==', '2020-03-09 18:54:43'),
-	('4CZr3bqEIscacEmkx6Ri7A==', 'admin@shristationery.com', 'sz1HGqGxHSfN764oEQfHWA==', '2020-02-22 11:30:21'),
-	('8BqhRAo7l2cl7FT5iSy1lA==', 'admin@shristationery.com', 'OjLl6Ydx0g5efWpO8Uh6nw==', '2020-02-24 17:12:51'),
-	('AEsS4ndtWk5e+U9vybenHw==', 'admin@shristationery.com', 'AViYvCdT4YsfWbfL+jg4+g==', '2020-03-09 18:00:41'),
-	('bCU3uuaTwjdur8Lnsvb2Sg==', 'admin@shristationery.com', 'HC1Qbl5qmOb6VoxUVj01Bw==', '2020-03-09 18:27:32'),
-	('Cd9zRvCzaLNfaTj/cgj1tQ==', 'admin@shristationery.com', 'I0CS0fVtWfJsdSOEJYW+Pw==', '2020-03-09 18:11:09'),
-	('cXG+P6DKT03uV/zSwPkXbg==', 'admin@shristationery.com', '93iCGMPLyvYwJNIT9Gb1ug==', '2020-03-07 16:55:41'),
-	('dhk9wCThLBAV8dpAaOXoKA==', 'admin@shristationery.com', '0isFBZ/Z7n9tW5Cd1QlrPQ==', '2020-03-09 18:19:38'),
-	('DJ5tXdi0sGbcVp61r3RT/w==', 'admin@shristationery.com', 'W/VTMB3B92VC7DHK1yFGWg==', '2020-02-17 17:19:00'),
-	('dKOTaCUdMUyn0cR4J8yl8A==', 'admin@shristationery.com', 'Z/8mC/+k7pYh9UuSHWfn/A==', '2020-02-24 11:07:17'),
-	('fmg4TxTun5m8aQOfwD8Llg==', 'admin@shristationery.com', 'DXDttKtbu+hNhLBQZ3TAug==', '2020-03-06 17:48:14'),
-	('FWU0uKEKC2/CIyVl88Q0kQ==', 'admin@shristationery.com', '3Q6RSi7PJTS52JY9v4iyqw==', '2020-02-24 16:47:11'),
-	('gQF6l+0Mtcqg+T7yaxfuWg==', 'admin@shristationery.com', 'NVhZUGbHVQtnkcxWzC0L2w==', '2020-03-06 17:41:35'),
-	('H7Uyz6ImFsU7JbvSFuOl5w==', 'admin@shristationery.com', 'ZirNUwlsB0TWD4RtQn089g==', '2020-03-09 18:54:47'),
-	('izPTlGpNFc62o+DcOy5eig==', 'admin@shristationery.com', 'HIygcfDTMvRhJHUC4t4TlQ==', '2020-03-07 16:47:36'),
-	('JYVDAHcGRIx5sDOaCjhEjw==', 'admin@shristationery.com', 'eiWLnWuIKMOGl/zuJ0+TKw==', '2020-02-22 20:59:19'),
-	('mFYbQjPpw8d+ZwPPvukvqA==', 'admin@shristationery.com', 'xLpHunpv/ihfdp90d6wOpA==', '2020-03-07 16:36:34'),
-	('MqIoT5aKBb0HmQjqLP9+ZA==', 'admin@shristationery.com', 'RW9cdn5cihOdcf8+0k5I3w==', '2020-02-24 16:53:39'),
-	('q0nVwrLaBirzCIywz2eOwQ==', 'admin@shristationery.com', 'hldfV/5eheoHMzYP375joQ==', '2020-03-07 16:40:04'),
-	('rbbt5bhoGoup6NW4vg2ApA==', 'admin@shristationery.com', 'R8ynrvYDFKPzCI2dTJADBw==', '2020-03-09 15:01:40'),
-	('sYf9ItyCMkV2O5TpdK1+zg==', 'admin@shristationery.com', '7NSMqvz39AXGmYYaGDLfLg==', '2020-03-07 15:39:02'),
-	('u+70zfu2IONRsqDKa8mJJw==', 'admin@shristationery.com', 'T4/dEZg3DQV7+hoogjiNuQ==', '2020-02-17 17:18:22'),
-	('uLYXPlmyiyBF+fFfLExoNQ==', 'admin@shristationery.com', 'FxQqaC8et+wC03OZr8/9/A==', '2020-03-07 16:18:40'),
-	('v/hPjZkRIu/nSxf3Zmmdxw==', 'admin@shristationery.com', '6O+cbaVtKpjaVtHGcMZhjw==', '2020-02-24 16:50:30'),
-	('voQ+YnCmO+4ZfFpkp7NFJQ==', 'admin@shristationery.com', '0L5m2Mcj1W3c+hiH1cLSZg==', '2020-03-09 17:49:27'),
-	('w+WGewX5gCoUEFW88tD+mg==', 'admin@shristationery.com', 'eZC9Ogp+tNq4onLXyS/x9A==', '2020-03-09 17:44:16');
-/*!40000 ALTER TABLE `persistent_logins` ENABLE KEYS */;
 
 -- Dumping structure for table shristationery.settings
 CREATE TABLE IF NOT EXISTS `settings` (
@@ -270,7 +239,7 @@ CREATE TABLE IF NOT EXISTS `sub_category` (
   `last_modified_by` int(11) DEFAULT NULL,
   `modified_timestamp` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8mb4;
 
 -- Dumping data for table shristationery.sub_category: ~4 rows (approximately)
 DELETE FROM `sub_category`;
