@@ -1,13 +1,5 @@
 <%@page import="com.taim.conduire.constants.ConstantCodes"%>
 <%@page import="com.taim.conduire.common.CommonHelper"%>
-<script>
-ShopifyApp.init({
-	 title: 'Welcome',
-     apiKey: '<%=ConstantCodes.SHOPIFY_CLIENT_ID%>',
-     shopOrigin: 'https://' + '<%=CommonHelper.getAccount().getShopifyStoreUrl()%>',
-     debug: true
-	}); 
-</script>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />

@@ -26,7 +26,13 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box">
-                                    
+                                    <div class="page-title-right">
+                                        <ol class="breadcrumb m-0">
+                                            <li class="breadcrumb-item"><a href="admin">Shri Stationery</a></li>
+                                            <li class="breadcrumb-item">Inventory</li>
+                                            <li class="breadcrumb-item active">Sub Category </li>
+                                        </ol>
+                                    </div>
                                     <h4 class="page-title">Sub Category</h4>
                                 </div>
                             </div>
@@ -71,8 +77,6 @@
                                     </div> <!-- end card-body-->
                                 </div> <!-- end card-->
                             </div> <!-- end col -->
-
-                            
                         </div>
                         <!-- end row -->
                         
@@ -85,7 +89,7 @@
 		            </button>
 		            <h4 class="custom-modal-title">Sub Category Creation</h4>
 		            <div class="custom-modal-text text-left">
-		                <form class="parsley-examples" id="subcategoryCreateform" name="subcategoryCreateform" method="POST" action="admin/subcategory-create" >
+		                <form class="parsley-examples" id="subcategoryCreateform" name="subcategoryCreateform" method="POST" action="admin/inventory/subcategory/subcategory-create" >
 		                	<div class="row">
 		                		<div class="col-md-9 grid-margin">
 		                			<div class="form-group">
@@ -169,7 +173,7 @@
 			console.log('Edit ' + vSubCategoryCode);
 			$.ajax({
   	  	      type: 'POST',
-  	  	      url: "admin/get-subcategory/"+vSubCategoryCode,
+  	  	      url: "admin/inventory/subcategory/get-subcategory/"+vSubCategoryCode,
   	  	      dataType: "json",
   	  	  	  success: function(resultData) {
   	  	  		$('#subcategoryCreateform').trigger("reset");
@@ -202,7 +206,7 @@
     	function getCategoryForDropDown(){
     		$.ajax({
                 type: "GET",
-                url:"admin/load-category",
+                url:"admin/inventory/category/load-category",
                 success: function (data) {
                     $.each(data,function(key,val)
                     {
@@ -255,7 +259,7 @@
         	        "bDestroy": true,
         	        "bPaginate": true,
         	        "bProcessing": true,
-        	        "ajax": {"url": "admin/get-subcategory-for-datatable","type":"POST", "contentType": "application/json","data": function(d) {
+        	        "ajax": {"url": "admin/inventory/subcategory/get-subcategory-for-datatable","type":"POST", "contentType": "application/json","data": function(d) {
         	            return JSON.stringify(d);
         	        	},
         	         "order": [[ 1, "asc" ],[ 2, "asc" ]]
@@ -301,7 +305,7 @@
     	            	name: {
     	                  required: true,
     	                  remote: {
-    	                      url: "admin/check-unique-subcategory-name",
+    	                      url: "admin/inventory/subcategory/check-unique-subcategory-name",
     	                      type: "post",
     	                      data: {
     	                        username: function() {
@@ -327,9 +331,6 @@
     	             }
     			});
     			
-    			
-    			
-    			
     			 $('#subcategory-listing').on( 'click', 'a.remove',function (e) {
     				 e.preventDefault();
     				 	$(this).closest('tr').addClass('selected');
@@ -337,7 +338,7 @@
     	     	    	console.log('Remove' + vSubCategoryCode);
     	     	    	$.ajax({
     	     	    	      type: 'POST',
-    	     	    	      url: "admin/delete-subcategory/"+vSubCategoryCode,
+    	     	    	      url: "admin/inventory/subcategory/delete-subcategory/"+vSubCategoryCode,
     	     	    	      dataType: "text",
     	     	    	      success: function(resp) { 
     	     	    	    	 $.toast({ 

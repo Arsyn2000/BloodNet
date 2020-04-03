@@ -1,11 +1,11 @@
 #!/bin/sh
-systemctl stop tomcat
-cd /opt/stoneandtile
+service tomcat stop
+cd /opt/shristationery
 git pull
 rm -rf target
 mvn clean compile install package
 cd /usr/share/tomcat/webapps
-rm -rf stoneandtile*
-cp /opt/stoneandtile/target/stoneandtile.war .
-systemctl start tomcat
+rm -rf shristationery*
+cp /opt/shristationery/target/shristationery.war .
+service tomcat start
 tail -f /var/log/messages

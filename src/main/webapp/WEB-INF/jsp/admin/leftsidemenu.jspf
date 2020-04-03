@@ -8,29 +8,42 @@
 					</a>
 				</li>
 				<li>
-					<a href="admin/category"> 
-						<i class="fe-grid"></i> <span> Category </span>	
-					</a>
+					<a href="javascript: void(0);">
+                        <i class="mdi mdi-buffer"></i>
+                        <span> Inventory </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+					<ul class="nav-second-level nav" aria-expanded="false">
+						<li>
+							<a href="admin/product"> 
+								<i class="fe-box"></i> <span> Products </span>	
+							</a>
+						</li>
+						<li>
+							<a href="admin/inventory/subcategory"> 
+								<i class="fe-package"></i> <span> Sub Category </span>	
+							</a>
+						</li>
+						<li>
+							<a href="admin/inventory/category"> 
+								<i class="fe-grid"></i> <span> Category </span>	
+							</a>
+						</li>
+						<li>
+							<a href="admin/inventory/distributor"> 
+								<i class="fe-pocket"></i> <span> Distributors </span>	
+							</a>
+						</li>
+						<li>
+							<a href="admin/inventory/company"> 
+								<i class="fe-layers"></i> <span> Company </span>	
+							</a>
+						</li>
+					</ul>
 				</li>
+				<li>
 					
-				<li>
-					<a href="admin/subcategory"> 
-						<i class="fe-package"></i> <span> Sub Category </span>	
-					</a>
 				</li>
-				
-				<li>
-					<a href="admin/product"> 
-						<i class="fe-box"></i> <span> Products </span>	
-					</a>
-				</li>
-				
-				<li>
-					<a href="admin/company"> 
-						<i class="fe-layers"></i> <span> Company </span>	
-					</a>
-				</li>
-				
 				<li>
 					<a href="admin/reports"> 
 						<i class="fe-activity"></i> <span> Reports </span>	
@@ -42,13 +55,6 @@
 						<i class="fe-users"></i> <span> Staff </span>	
 					</a>
 				</li>
-				
-				<li>
-					<a href="admin/agents"> 
-						<i class="fe-pocket"></i> <span> Distributors </span>	
-					</a>
-				</li>
-				
 				<li>
 					<a href="admin/settings"> 
 						<i class="fe-settings"></i> <span> Setting </span>	

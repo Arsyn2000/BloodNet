@@ -35,6 +35,7 @@ public class CategoryData implements Serializable {
     private Integer lastModifiedBy;
 
     @Column(name = "modified_timestamp")
+    @Temporal(TemporalType.TIMESTAMP)
     private Date modifiedTimestamp;
 
 	public Integer getId() {

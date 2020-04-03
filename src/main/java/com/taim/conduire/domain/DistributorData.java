@@ -7,26 +7,41 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@Table(name = "sub_category")
-public class SubCategoryData implements Serializable {
+@Table(name = "distributor")
+public class DistributorData implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Access(AccessType.PROPERTY)
     private Integer id;
 
-    @Column(name = "category_id")
-    private Integer categoryId;
-    
     @Column(name = "name")
     private String name;
 
     @Column(name = "alias")
     private String alias;
 
-    @Column(name = "description")
-    private String description;
+    @Column(name = "address")
+    private String address;
+    
+    @Column(name = "phone1")
+    private String phone1;
 
+    @Column(name = "phone2")
+    private String phone2;
+    
+    @Column(name = "gstin")
+    private String gstin;
+    
+    @Column(name = "email")
+    private String email;
+    
+    @Column(name = "website")
+    private String website;
+    
+    @Column(name = "contact_person")
+    private String contactPerson;
+    
     @Column(name = "create_date")
     @Temporal(TemporalType.TIMESTAMP)
     private Date createDate;
@@ -49,14 +64,6 @@ public class SubCategoryData implements Serializable {
 		this.id = id;
 	}
 
-	public Integer getCategoryId() {
-		return categoryId;
-	}
-
-	public void setCategoryId(Integer categoryId) {
-		this.categoryId = categoryId;
-	}
-
 	public String getName() {
 		return name;
 	}
@@ -73,12 +80,60 @@ public class SubCategoryData implements Serializable {
 		this.alias = alias;
 	}
 
-	public String getDescription() {
-		return description;
+	public String getAddress() {
+		return address;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getPhone1() {
+		return phone1;
+	}
+
+	public void setPhone1(String phone1) {
+		this.phone1 = phone1;
+	}
+
+	public String getPhone2() {
+		return phone2;
+	}
+
+	public void setPhone2(String phone2) {
+		this.phone2 = phone2;
+	}
+
+	public String getGstin() {
+		return gstin;
+	}
+
+	public void setGstin(String gstin) {
+		this.gstin = gstin;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getWebsite() {
+		return website;
+	}
+
+	public void setWebsite(String website) {
+		this.website = website;
+	}
+
+	public String getContactPerson() {
+		return contactPerson;
+	}
+
+	public void setContactPerson(String contactPerson) {
+		this.contactPerson = contactPerson;
 	}
 
 	public Date getCreateDate() {
@@ -115,9 +170,11 @@ public class SubCategoryData implements Serializable {
 
 	@Override
 	public String toString() {
-		return "SubCategoryData [id=" + id + ", categoryId=" + categoryId + ", name=" + name + ", alias=" + alias
-				+ ", description=" + description + ", createDate=" + createDate + ", status=" + status
+		return "DistributorData [id=" + id + ", name=" + name + ", alias=" + alias + ", address=" + address
+				+ ", phone1=" + phone1 + ", phone2=" + phone2 + ", gstin=" + gstin + ", email=" + email + ", website="
+				+ website + ", contactPerson=" + contactPerson + ", createDate=" + createDate + ", status=" + status
 				+ ", lastModifiedBy=" + lastModifiedBy + ", modifiedTimestamp=" + modifiedTimestamp + "]";
 	}
 
+	
 }

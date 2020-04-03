@@ -92,7 +92,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http.csrf().disable().exceptionHandling();
         http.headers().frameOptions().disable();
         http.authorizeRequests()
-                .antMatchers("/", "/index", "/index.html","/shopify/product","client/updatebrowsenode","/multichannel/**","/shopify-product-webhook/**", "/login", "/logout").permitAll()
+                .antMatchers("/", "/index", "/index.html","/shopify/product","client/updatebrowsenode","/multichannel/**","/admin/**","/shopify-product-webhook/**", "/login", "/logout").permitAll()
                 .antMatchers("/admin/**").hasRole("ADMIN")
                 .antMatchers(	"/manager/**").hasRole("MANAGER")
                 .antMatchers("/customer/**").hasRole("CUSTOMER")

@@ -27,7 +27,7 @@
                             <div class="col-12">
                                 <div class="page-title-box">
                                     
-                                    <h4 class="page-title">Category</h4>
+                                    <h4 class="page-title">Company</h4>
                                 </div>
                             </div>
                         </div>     
@@ -43,8 +43,8 @@
                                             <div class="">
                                                 <div class="text-sm-left mt-3 mt-lg-0" id="demo-custom-toolbar2">
                                                 
-                                                    <a href="#custom-modal" class="btn btn-success waves-effect waves-light mr-1" data-animation="fadein" data-plugin="custommodal" data-clearform="yes" data-formid="categoryCreateform"
-                                                     data-overlayColor="#38414a" id="agent_anchor"><i class="fe-plus-circle"></i> Add Category</a>
+                                                    <a href="#custom-modal" class="btn btn-success waves-effect waves-light mr-1" data-animation="fadein" data-plugin="custommodal" data-clearform="yes" data-formid="companyCreateform"
+                                                     data-overlayColor="#38414a" id="agent_anchor"><i class="fe-plus-circle"></i> Add Company</a>
                                                      
                                                 </div>
                                                
@@ -52,12 +52,13 @@
                                         </div>
                 
                                         <div class="table-responsive">
-		                    				<table id="category-listing" class="table table-hover m-0 table-centered dt-responsive w-100">
+		                    				<table id="company-listing" class="table table-hover m-0 table-centered dt-responsive w-100">
 						                      <thead>
 						                        <tr>
 						                            <th>Name</th>
-						                            <th>Alias</th>
-						                            <th>Description</th>
+						                            <th>WebSite</th>
+						                            <th>Email</th>
+						                            <th>Margin</th>
 						                            <th>Status</th>
 						                            <th>Edit</th>
 						                            <th>Remove</th>
@@ -70,8 +71,6 @@
                                     </div> <!-- end card-body-->
                                 </div> <!-- end card-->
                             </div> <!-- end col -->
-
-                            
                         </div>
                         <!-- end row -->
                         
@@ -82,38 +81,94 @@
 		            <button type="button" class="close" onclick="Custombox.modal.close();">
 		                <span>&times;</span><span class="sr-only">Close</span>
 		            </button>
-		            <h4 class="custom-modal-title">Category Creation</h4>
+		            <h4 class="custom-modal-title">Company Creation</h4>
 		            <div class="custom-modal-text text-left">
-		                <form class="parsley-examples" id="categoryCreateform" name="categoryCreateform" method="POST" action="admin/inventory/category/category-create" >
+		                <form class="parsley-examples" id="companyCreateform" name="companyCreateform" method="POST" action="admin/inventory/company/company-create" enctype="multipart/form-data">
 		                	<div class="row">
-								<div class="col-md-9 grid-margin">
+								<div class="col-md-8 grid-margin">
 				                    <div class="form-group">
-							            <label for="name">Category Name</label>
-							            <input type="text" class="form-control" id="name" name="name" placeholder="Category Name" parsley-trigger="change" required >
-										<input type="text" id="categoryid" name="categoryid" style="display:none">
+							            <label for="name">Company Name</label>
+							            <input type="text" class="form-control" id="name" name="name" placeholder="Category Name" parsley-trigger="change" required="true" />
+										<input type="text" id="companyid" name="companyid" style="display:none">
 							        </div>
 							    </div>
-								<div class="col-md-3 grid-margin">
-				                    <div class="form-group">
-							            <label for="alias">Alias</label>
-							            <input type="text" class="form-control" id="alias" name="alias" placeholder="Alias" parsley-trigger="change" required>
-							        </div>
-							      </div>
+							     <div class="col-md-4 text-center">
+							 		<img src="assets/images/users/user-5.jpg" alt="image" class="img-fluid avatar-lg img-thumbnail" id="logo" name="logo">
+							     </div>
 							   </div>
 							   <div class="row">
-								<div class="col-md-12 grid-margin">
+							    <div class="col-md-4 grid-margin">
 				                    <div class="form-group">
-							            <label for="description">Description</label>
-							            <input type="text" class="form-control" id="description" name="description" placeholder="Description" parsley-trigger="change" required>
+							            <label for="alias">Alias</label>
+							            <input type="text" class="form-control" id="alias" name="alias" placeholder="Alias" parsley-trigger="change"/>
+							        </div>
+							      </div>
+						        <div class="col-md-4 grid-margin">
+				                    <div class="form-group">
+							            <label for="discount">Base Discount</label>
+							            <input type="text" class="form-control" id="discount" name="discount" placeholder="Discount" parsley-trigger="change"/>
 						          	</div>
 						        </div>
-							   
+						        <div class="col-md-4 grid-margin">
+						        	<div class="form-group">
+							        	<label>Upload Logo</label>
+	                                    <div class="input-group">
+	                                        <div class="custom-file">
+	                                            <input type="file" class="custom-file-input" id="logo-file" name="logo-file" accept='image/*'>
+	                                            <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
+	                                        </div>
+										</div>
+									</div>
+						        </div>
+							 </div>
+							 <div class="row">
+							 	<div class="col-md-12 grid-margin">
+				                    <div class="form-group">
+							            <label for="description">Description</label>
+							            <input type="text" class="form-control" id="description" name="description" placeholder="Description" parsley-trigger="change"/>
+						          	</div>
+						        </div>
+							 </div>
+							 <div class="row">
+							 	<div class="col-md-6 grid-margin">
+							 		<div class="form-group">
+							 			<label for="url">Website</label>
+							 			<input type="url" class="form-control" id="url" name="url" placeholder="Website URL" parsley-trigger="change">
+							 		</div>
+							 	</div>
+							 	<div class="col-md-6 grid-margin">
+							 		<div class="form-group">
+							 			<label for="email">eMail</label>
+							 			<input type="email" class="form-control" id="email" name="email" placeholder="E-mail address" parsley-trigger="change">
+							 		</div>
+							 	</div>
+							 </div>
+							 <div class="row">
+							 	<div class="col-md-6 grid-margin">
+							 		<div class="form-group">
+							 			<label for="phone">Phone Number</label>
+							 			<input type="text" class="form-control" id="phone" name="phone" placeholder="Phone Number" parsley-trigger="change" pattern="[0-9]{10}">
+							 		</div>
+							 	</div>
+							 	<div class="col-md-6 grid-margin">
+							 		<div class="form-group">
+							 			<label for="fax">Fax Number</label>
+							 			<input type="tel" class="form-control" id="fax" name="fax" placeholder="Fax Number" parsley-trigger="change">
+							 		</div>
+							 	</div>
+							 </div>
+							 <div class="row">
+								<div class="col-md-12 grid-margin">
+				                    <div class="form-group">
+							            <label for="address">Address</label>
+							            <input type="text" class="form-control" id="address" name="address" placeholder="Address" parsley-trigger="change"/>
+						          	</div>
+						        </div>
 							 </div>
 							 <div class="row">
 							 	<div class="col-md-6 grid-margin">
 							 		<div class="text-left">
-							 			<input type="checkbox" checked="true" data-plugin="switchery" data-color="#039cfd" data-switchery="true" style="display: none;" id="categorystatus" name="categorystatus" class="js-switch">
-							 			
+							 			<input type="checkbox" checked="true" data-plugin="switchery" data-color="#039cfd" data-switchery="true" style="display: none;" id="status" name="status" class="js-switch"/>
 							 		</div>	
 							 	</div>
 							 	<div class="col-md-6 grid-margin">
@@ -126,17 +181,7 @@
 		                </form>
            			 </div>
        			 </div> 
-       			 <div class="toast fade" role="alert" aria-live="assertive" aria-atomic="true"  data-autohide="true" style="position: absolute; top: 12%; right: 1%;" >
-					  <div class="toast-header">
-					    <strong class="mr-auto text-primary">Category</strong>
-					    <small class="text-muted"></small>
-					    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
-					  </div>
-					  <div class="toast-body">
-					    Some text inside the toast body
-					  </div>
-					</div>
-                <%@ include file="footer.jspf"%>
+       			 <%@ include file="footer.jspf"%>
                 
             </div>
         </div>
@@ -152,21 +197,27 @@
     		  }
     		}
     	
-    	function editCategory(vCategoryCode) {
+    	function editCompany(vCompanyCode) {
     		
-			var element = $('#categorystatus');
-			console.log('Edit ' + vCategoryCode);
+			var element = $('#status');
+			console.log('Edit ' + vCompanyCode);
 			$.ajax({
-  	  	      type: 'POST',
-  	  	      url: "admin/inventory/category/get-category/"+vCategoryCode,
+  	  	      type: 'GET',
+  	  	      url: "admin/inventory/company/get-company/"+vCompanyCode,
   	  	      dataType: "json",
   	  	  	  success: function(resultData) {
-  	  	  		$('#categoryCreateform').trigger("reset");
-  	  	  		$('#categoryid').val(resultData.id);
+  	  	  		$('#companyCreateform').trigger("reset");
+  	  	  		$('#companyid').val(resultData.id);
   	  	  		$('#name').val(resultData.name);
   	  	  		$('#alias').val(resultData.alias);
   	  	  		$('#description').val(resultData.description);
-  	  	  		console.log(resultData.status);
+			  	$('#discount').val(resultData.baseDiscount);
+			  	$('#url').val(resultData.url);
+			  	$('#email').val(resultData.email);
+			  	$('#phone').val(resultData.phone);
+			  	$('#fax').val(resultData.fax);
+			  	$('#description').val(resultData.description);
+			  	$('#address').val(resultData.address);
   	  	  		if(resultData.status == "on"){
   	  	  			changeSwitchery(element, true);
   	  	  		}else{
@@ -189,13 +240,36 @@
 			});
 		}
 
+    	function readURL(input) {
+    		var reader = new FileReader();
+	        reader.onload = function (e) {
+	            $('#logo').attr('src', e.target.result);
+	        }
+	        reader.readAsDataURL(input);
+		}
     	
     		$(document).ready(function(){
     			var elem = document.querySelector('.js-switch');
     			var init = new Switchery(elem);
+
+    	        $('#logo-file').on('change',function(event){
+    	            //get the file name
+    	            var fileName = $(this).val();
+    	            //replace the "Choose a file" label
+    	            $(this).next('.custom-file-label').html(fileName.replace('C:\\fakepath\\', " "));
+    	            var input = event.target;
+
+    	            var reader = new FileReader();
+    	            reader.onload = function(){
+	    	            var dataURL = reader.result;
+	    	            var output = document.getElementById('logo');
+	    	            output.src = dataURL;
+    	            };
+    	            reader.readAsDataURL(input.files[0]);
+    	        });
+    	    	
     			
-    			
-    			var t = $('#category-listing').DataTable({
+    			var t = $('#company-listing').DataTable({
     				language:{
     					paginate:{
     						previous:"<i class='mdi mdi-chevron-left'>",
@@ -208,14 +282,19 @@
     			 	},
         	        "columns":[
         	        		{"data":"name"},
-        	        		{"data":"alias"},
-        	        		{"data":"description"},
+        	        		{"data":"url", "render": function(data,type,row){
+        	        			return '<a href="' + data + '" target="_blank">'+ data + '</a>';
+        	        		}},
+        	        		{"data":"email", "render": function(data,type,row){
+        	        			return '<a href="mailto:' + data + '">'+ data + '</a>';
+        	        		}},
+        	        		{"data":"baseDiscount"},
         	        		{"data":"status", "render": function(data,type,row){
         	        			return data.toUpperCase();
         	        		}},
         	        		{"data":"name", "bSortable": false ,"render": function ( data, type, row ) {
              	        		return '<div class="col-6"><div class="avatar-sm bg-success shadow-lg rounded" style="background-color:#4fc6e1!important">'+
-             	        		'<a href="javascript:void(0)" onClick="editCategory('+row.id+')" ><i class="fe-edit-1 avatar-title font-22 text-white"></i></a></div></div>';
+             	        		'<a href="javascript:void(0)" onClick="editCompany('+row.id+')" ><i class="fe-edit-1 avatar-title font-22 text-white"></i></a></div></div>';
                             }},
                             {"data":"name", "bSortable": false ,"render": function ( data, type, row ) {
              	        		return '<div class="col-6"><div class="avatar-sm bg-success shadow-lg rounded" style="background-color:#ed2643!important"><a href="" class="remove"><i class="fe-x avatar-title font-22 text-white"></i></a></div></div>';
@@ -227,7 +306,7 @@
         	        "bDestroy": true,
         	        "bPaginate": true,
         	        "bProcessing": true,
-        	        "ajax": {"url": "admin/inventory/category/get-category-for-datatable","type":"POST", "contentType": "application/json","data": function(d) {
+        	        "ajax": {"url": "admin/inventory/company/get-company-for-datatable","type":"POST", "contentType": "application/json","data": function(d) {
         	            return JSON.stringify(d);
         	        	}
         	        },
@@ -240,13 +319,13 @@
     			$(".parsley-examples").parsley();
     		
     			
-    			$('#categoryCreateform').validate({
+    			$('#companyCreateform').validate({
     				submitHandler: function(form) {
     	                $(form).ajaxSubmit(function(resp) {
     	                	if(resp == 'Yes'){
     	                		 $.toast({ 
     	    	    	  	    	  heading: 'Success',
-    	    	    	  	    	  text :'Category updated/created successfully !!!', 
+    	    	    	  	    	  text :'Company updated/created successfully !!!', 
     	    	    	  	    	  icon : 'success',
     	    	    	  	    	  showHideTransition : 'slide',  // It can be plain, fade or slide
     	    	    	  	    	  hideAfter: 5000,
@@ -255,7 +334,7 @@
 			        		 }else{
 			        			 $.toast({ 
 			 	    	  	    	  heading: 'Error',
-			 	    	  	    	  text : 'Unable to create Category !!!', 
+			 	    	  	    	  text : 'Unable to create Company !!!', 
 			 	    	  	    	  icon : 'error',
 			 	    	  	    	  showHideTransition : 'slide',  // It can be plain, fade or slide
 			 	    	  	    	  hideAfter: 5000,
@@ -270,14 +349,14 @@
     	            	name: {
     	                  required: true,
     	                  remote: {
-    	                      url: "admin/inventory/category/check-unique-category-name",
-    	                      type: "post",
+    	                      url: "admin/inventory/company/check-unique-company-name",
+    	                      type: "get",
     	                      data: {
     	                        username: function() {
     	                          return $( "#name" ).val();
     	                        },
     	                        id: function() {
-      	                          return $( "#categoryid" ).val();
+      	                          return $( "#companyid" ).val();
       	                        }
     	                      }
     	                  }
@@ -285,20 +364,20 @@
     	              },
     	             messages:{
     	            	 username:{
-    	            		 remote: "Category already exists !!"
+    	            		 remote: "Company already exists !!"
     	            	 }
     	             }
     			});
     			
     			
-    			 $('#category-listing').on( 'click', 'a.remove',function (e) {
+    			 $('#company-listing').on( 'click', 'a.remove',function (e) {
     				 e.preventDefault();
     				 	$(this).closest('tr').addClass('selected');
-    	     	    	var vCategoryCode = t.rows('.selected').data()[0].id; 
-    	     	    	console.log('Remove' + vCategoryCode);
+    	     	    	var vCompanyCode = t.rows('.selected').data()[0].id; 
+    	     	    	console.log('Remove' + vCompanyCode);
     	     	    	$.ajax({
-    	     	    	      type: 'POST',
-    	     	    	      url: "admin/inventory/category/delete-category/"+vCategoryCode,
+    	     	    	      type: 'DELETE',
+    	     	    	      url: "admin/inventory/company/delete-company/"+vCompanyCode,
     	     	    	      dataType: "text",
     	     	    	      success: function(resp) { 
     	     	    	    	 $.toast({ 
