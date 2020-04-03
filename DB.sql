@@ -13,12 +13,10 @@
 
 
 -- Dumping database structure for shristationery
-DROP DATABASE IF EXISTS `shristationery`;
 CREATE DATABASE IF NOT EXISTS `shristationery` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `shristationery`;
 
 -- Dumping structure for table shristationery.account
-DROP TABLE IF EXISTS `account`;
 CREATE TABLE IF NOT EXISTS `account` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `first_name` varchar(150) NOT NULL DEFAULT '0',
@@ -60,7 +58,6 @@ INSERT INTO `account` (`id`, `first_name`, `last_name`, `email`, `username`, `pa
 /*!40000 ALTER TABLE `account` ENABLE KEYS */;
 
 -- Dumping structure for table shristationery.application_recurring_charge
-DROP TABLE IF EXISTS `application_recurring_charge`;
 CREATE TABLE IF NOT EXISTS `application_recurring_charge` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `recurring_charge_id` varchar(50) NOT NULL,
@@ -88,7 +85,6 @@ DELETE FROM `application_recurring_charge`;
 /*!40000 ALTER TABLE `application_recurring_charge` ENABLE KEYS */;
 
 -- Dumping structure for table shristationery.category
-DROP TABLE IF EXISTS `category`;
 CREATE TABLE IF NOT EXISTS `category` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
@@ -110,20 +106,7 @@ INSERT INTO `category` (`id`, `name`, `alias`, `description`, `create_date`, `st
 	(3, 'Paper Products', 'PP', 'All type of paper products', '2020-02-10 00:00:00', 'on', 129, '2020-02-10 14:13:25');
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 
--- Dumping structure for view shristationery.category_subcategory_view
-DROP VIEW IF EXISTS `category_subcategory_view`;
--- Creating temporary table to overcome VIEW dependency errors
-CREATE TABLE `category_subcategory_view` (
-	`id` INT(11) NOT NULL,
-	`categoryname` VARCHAR(100) NOT NULL COLLATE 'utf8mb4_0900_ai_ci',
-	`name` VARCHAR(100) NULL COLLATE 'utf8mb4_0900_ai_ci',
-	`alias` VARCHAR(10) NULL COLLATE 'utf8mb4_0900_ai_ci',
-	`description` VARCHAR(150) NULL COLLATE 'utf8mb4_0900_ai_ci',
-	`status` VARCHAR(50) NULL COLLATE 'utf8mb4_0900_ai_ci'
-) ENGINE=MyISAM;
-
 -- Dumping structure for table shristationery.company
-DROP TABLE IF EXISTS `company`;
 CREATE TABLE IF NOT EXISTS `company` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) DEFAULT NULL,
@@ -149,7 +132,6 @@ DELETE FROM `company`;
 /*!40000 ALTER TABLE `company` ENABLE KEYS */;
 
 -- Dumping structure for table shristationery.distributor
-DROP TABLE IF EXISTS `distributor`;
 CREATE TABLE IF NOT EXISTS `distributor` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) DEFAULT NULL,
@@ -176,7 +158,6 @@ INSERT INTO `distributor` (`id`, `name`, `alias`, `address`, `phone1`, `phone2`,
 /*!40000 ALTER TABLE `distributor` ENABLE KEYS */;
 
 -- Dumping structure for table shristationery.faq
-DROP TABLE IF EXISTS `faq`;
 CREATE TABLE IF NOT EXISTS `faq` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `question` varchar(250) NOT NULL,
@@ -190,7 +171,6 @@ DELETE FROM `faq`;
 /*!40000 ALTER TABLE `faq` ENABLE KEYS */;
 
 -- Dumping structure for table shristationery.log_status
-DROP TABLE IF EXISTS `log_status`;
 CREATE TABLE IF NOT EXISTS `log_status` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `package_name` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
@@ -204,7 +184,6 @@ DELETE FROM `log_status`;
 /*!40000 ALTER TABLE `log_status` ENABLE KEYS */;
 
 -- Dumping structure for table shristationery.menu
-DROP TABLE IF EXISTS `menu`;
 CREATE TABLE IF NOT EXISTS `menu` (
   `id` int(15) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
@@ -222,7 +201,6 @@ DELETE FROM `menu`;
 /*!40000 ALTER TABLE `menu` ENABLE KEYS */;
 
 -- Dumping structure for table shristationery.persistent_logins
-DROP TABLE IF EXISTS `persistent_logins`;
 CREATE TABLE IF NOT EXISTS `persistent_logins` (
   `series` varchar(64) NOT NULL,
   `username` varchar(64) NOT NULL,
@@ -264,7 +242,6 @@ INSERT INTO `persistent_logins` (`series`, `username`, `token`, `last_used`) VAL
 /*!40000 ALTER TABLE `persistent_logins` ENABLE KEYS */;
 
 -- Dumping structure for table shristationery.settings
-DROP TABLE IF EXISTS `settings`;
 CREATE TABLE IF NOT EXISTS `settings` (
   `account_id` int(11) NOT NULL,
   `username` varchar(150) DEFAULT NULL,
@@ -282,7 +259,6 @@ DELETE FROM `settings`;
 /*!40000 ALTER TABLE `settings` ENABLE KEYS */;
 
 -- Dumping structure for table shristationery.sub_category
-DROP TABLE IF EXISTS `sub_category`;
 CREATE TABLE IF NOT EXISTS `sub_category` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `category_id` int(11) DEFAULT NULL,
@@ -307,7 +283,6 @@ INSERT INTO `sub_category` (`id`, `category_id`, `name`, `alias`, `description`,
 /*!40000 ALTER TABLE `sub_category` ENABLE KEYS */;
 
 -- Dumping structure for table shristationery.support
-DROP TABLE IF EXISTS `support`;
 CREATE TABLE IF NOT EXISTS `support` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `account_id` int(11) NOT NULL,
@@ -324,12 +299,6 @@ CREATE TABLE IF NOT EXISTS `support` (
 DELETE FROM `support`;
 /*!40000 ALTER TABLE `support` DISABLE KEYS */;
 /*!40000 ALTER TABLE `support` ENABLE KEYS */;
-
--- Dumping structure for view shristationery.category_subcategory_view
-DROP VIEW IF EXISTS `category_subcategory_view`;
--- Removing temporary table and create final VIEW structure
-DROP TABLE IF EXISTS `category_subcategory_view`;
-CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `category_subcategory_view` AS select `sc`.`id` AS `id`,`c`.`name` AS `categoryname`,`sc`.`name` AS `name`,`sc`.`alias` AS `alias`,`sc`.`description` AS `description`,`sc`.`status` AS `status` from (`category` `c` join `sub_category` `sc` on((`c`.`id` = `sc`.`category_id`))) order by `c`.`name`,`sc`.`name`;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
