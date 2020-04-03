@@ -93,7 +93,7 @@ CREATE TABLE IF NOT EXISTS `category` (
   `create_date` timestamp NOT NULL,
   `status` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   `last_modified_by` int(11) NOT NULL,
-  `modified_timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `modified_timestamp` timestamp NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
@@ -122,7 +122,7 @@ CREATE TABLE IF NOT EXISTS `company` (
   `base_discount` decimal(10,2) DEFAULT '0.00',
   `status` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
   `last_modified_by` int(11) DEFAULT NULL,
-  `modified_timestamp` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `modified_timestamp` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
@@ -146,7 +146,7 @@ CREATE TABLE IF NOT EXISTS `distributor` (
   `create_date` timestamp NULL DEFAULT NULL,
   `status` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
   `last_modified_by` int(11) DEFAULT NULL,
-  `modified_timestamp` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `modified_timestamp` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
@@ -268,7 +268,7 @@ CREATE TABLE IF NOT EXISTS `sub_category` (
   `create_date` timestamp NULL DEFAULT NULL,
   `status` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
   `last_modified_by` int(11) DEFAULT NULL,
-  `modified_timestamp` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `modified_timestamp` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
