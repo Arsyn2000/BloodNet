@@ -15,7 +15,8 @@
                     </a>
 					<ul class="nav-second-level nav" aria-expanded="false">
 						<li>
-							<a href="admin/product"> 
+							<!-- <a href="admin/product"> -->
+							<a href="#"> 
 								<i class="fe-box"></i> <span> Products </span>	
 							</a>
 						</li>
@@ -45,18 +46,18 @@
 					
 				</li>
 				<li>
-					<a href="admin/reports"> 
+					<a href=""> 
 						<i class="fe-activity"></i> <span> Reports </span>	
 					</a>
 				</li>
 				
 				<li>
-					<a href="admin/agents"> 
+					<a href=""> 
 						<i class="fe-users"></i> <span> Staff </span>	
 					</a>
 				</li>
 				<li>
-					<a href="admin/settings"> 
+					<a href=""> 
 						<i class="fe-settings"></i> <span> Setting </span>	
 					</a>
 				</li>
