@@ -30,19 +30,24 @@ public class AccountData implements UserDetails, Principal, Serializable {
     @Column(name = "last_name")
     private String lastName;
 
+    @Column(name = "email")
+    private String email;
+    
+    @Column(name = "username")
+    private String username;
+    
     @Column(name = "password")
     private String password;
 
-    @Column(name = "username")
-    private String username;
-
-   
+    @Column(name = "account_status")
+    private String accountStatus;
+    
     @Column(name = "account_type")
     private String accountType;
 
-    @Column(name = "email")
-    private String email;
-
+    @Column(name = "store_name")
+    private String storeName;
+    
     @Column(name = "createdate")
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdate;
@@ -50,20 +55,10 @@ public class AccountData implements UserDetails, Principal, Serializable {
     @Column(name = "system_generated")
     private String systemGenerated;
 
-    @Column(name = "account_status")
-    private String accountStatus;
+  
 
     @Column(name = "welcome_email_sent")
     private String welcomeEmailSent;
-
-    @Column(name = "verification_code")
-    private String verificationCode;
-
-    @Column(name = "shopify_store_url")
-    private String shopifyStoreUrl;
-
-    @Column(name = "access_token")
-    private String accessToken;
 
     @Column(name = "visible")
     private char visible;
@@ -167,30 +162,6 @@ public class AccountData implements UserDetails, Principal, Serializable {
 		this.welcomeEmailSent = welcomeEmailSent;
 	}
 
-	public String getVerificationCode() {
-		return verificationCode;
-	}
-
-	public void setVerificationCode(String verificationCode) {
-		this.verificationCode = verificationCode;
-	}
-
-	public String getShopifyStoreUrl() {
-		return shopifyStoreUrl;
-	}
-
-	public void setShopifyStoreUrl(String shopifyStoreUrl) {
-		this.shopifyStoreUrl = shopifyStoreUrl;
-	}
-
-	public String getAccessToken() {
-		return accessToken;
-	}
-
-	public void setAccessToken(String accessToken) {
-		this.accessToken = accessToken;
-	}
-
 	public char getVisible() {
 		return visible;
 	}
@@ -201,12 +172,11 @@ public class AccountData implements UserDetails, Principal, Serializable {
 
 	@Override
 	public String toString() {
-		return "AccountData [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", password="
-				+ password + ", username=" + username + ", accountType=" + accountType + ", email=" + email
-				+ ", createdate=" + createdate + ", systemGenerated=" + systemGenerated + ", accountStatus="
-				+ accountStatus + ", welcomeEmailSent=" + welcomeEmailSent + ", verificationCode=" + verificationCode
-				+ ", shopifyStoreUrl=" + shopifyStoreUrl + ", accessToken=" + accessToken + ", visible=" + visible
-				+ "]";
+		return "AccountData [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
+				+ ", username=" + username + ", password=" + password + ", accountStatus=" + accountStatus
+				+ ", accountType=" + accountType + ", storeName=" + storeName + ", createdate=" + createdate
+				+ ", systemGenerated=" + systemGenerated + ", welcomeEmailSent=" + welcomeEmailSent + ", visible="
+				+ visible + "]";
 	}
 
 	@Override

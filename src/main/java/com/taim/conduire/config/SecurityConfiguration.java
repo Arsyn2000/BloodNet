@@ -94,7 +94,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/", "/index", "/index.html","/shopify/product","client/updatebrowsenode","/multichannel/**","/admin/**","/shopify-product-webhook/**", "/login", "/logout").permitAll()
                 .antMatchers("/admin/**").hasRole("ADMIN")
-                .antMatchers(	"/manager/**").hasRole("MANAGER")
+                .antMatchers("/manager/**").hasRole("MANAGER")
                 .antMatchers("/customer/**").hasRole("CUSTOMER")
                 .anyRequest().authenticated()
 

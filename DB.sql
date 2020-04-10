@@ -26,35 +26,26 @@ CREATE TABLE IF NOT EXISTS `account` (
   `password` varchar(50) CHARACTER SET utf8 DEFAULT '0',
   `account_status` varchar(50) CHARACTER SET utf8 DEFAULT '0',
   `account_type` varchar(50) CHARACTER SET utf8 NOT NULL,
+  `store_name` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `createdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `system_generated` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `welcome_email_sent` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `country` varchar(50) CHARACTER SET utf8 DEFAULT '0',
   `state` varchar(50) CHARACTER SET utf8 DEFAULT '0',
   `city` varchar(50) CHARACTER SET utf8 DEFAULT '0',
   `pin` varchar(10) CHARACTER SET utf8 DEFAULT '0',
   `hphone` varchar(50) CHARACTER SET utf8 DEFAULT '0',
   `wphone` varchar(50) CHARACTER SET utf8 DEFAULT '0',
-  `createdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `system_generated` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
-  `welcome_email_sent` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
-  `verification_code` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
   `visible` char(1) CHARACTER SET utf8 NOT NULL DEFAULT 'Y',
-  `access_token` varchar(250) CHARACTER SET utf8 DEFAULT NULL,
-  `shopify_store_url` varchar(250) CHARACTER SET utf8 DEFAULT NULL,
-  `device_token` varchar(250) CHARACTER SET utf8 DEFAULT NULL,
-  `arise_uname` varchar(250) CHARACTER SET utf8 DEFAULT NULL,
-  `arise_upass` varchar(250) CHARACTER SET utf8 DEFAULT NULL,
-  `arise_connected` varchar(250) CHARACTER SET utf8 DEFAULT 'DISCONNECTED',
-  `store_name` varchar(250) CHARACTER SET utf8 DEFAULT NULL,
-  `shopify_bill_id` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `profit_margin` decimal(10,2) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `account_username_uindex` (`username`)
 ) ENGINE=InnoDB AUTO_INCREMENT=130 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumping data for table shristationery.account: ~0 rows (approximately)
+-- Dumping data for table shristationery.account: ~1 rows (approximately)
 DELETE FROM `account`;
 /*!40000 ALTER TABLE `account` DISABLE KEYS */;
-INSERT INTO `account` (`id`, `first_name`, `last_name`, `email`, `username`, `password`, `account_status`, `account_type`, `country`, `state`, `city`, `pin`, `hphone`, `wphone`, `createdate`, `system_generated`, `welcome_email_sent`, `verification_code`, `visible`, `access_token`, `shopify_store_url`, `device_token`, `arise_uname`, `arise_upass`, `arise_connected`, `store_name`, `shopify_bill_id`, `profit_margin`) VALUES
-	(129, 'Divyesh', 'Jhaveri', 'erdivyeshjhaveri@gmail.com', 'admin@shristationery.com', 'admin@shristationery.com', 'ACTIVE', 'ADMIN', 'n/a', 'na/', 'n/a', 'n/a', 'n/a', 'n/a', '2020-02-08 15:10:58', NULL, NULL, NULL, 'Y', NULL, NULL, NULL, NULL, NULL, 'DISCONNECTED', NULL, NULL, NULL);
+INSERT INTO `account` (`id`, `first_name`, `last_name`, `email`, `username`, `password`, `account_status`, `account_type`, `store_name`, `createdate`, `system_generated`, `welcome_email_sent`, `country`, `state`, `city`, `pin`, `hphone`, `wphone`, `visible`) VALUES
+	(129, 'Divyesh', 'Jhaveri', 'erdivyeshjhaveri@gmail.com', 'admin@shristationery.com', 'admin@shristationery.com', 'ACTIVE', 'ADMIN', NULL, '2020-02-08 15:10:58', NULL, NULL, 'n/a', 'na/', 'n/a', 'n/a', 'n/a', 'n/a', 'Y');
 /*!40000 ALTER TABLE `account` ENABLE KEYS */;
 
 -- Dumping structure for table shristationery.application_recurring_charge
@@ -105,6 +96,17 @@ INSERT INTO `category` (`id`, `name`, `alias`, `description`, `create_date`, `st
 	(2, 'Drawing Instruments', 'DI', 'All type of drawing instruments', '2020-02-24 11:07:38', 'on', 129, '2020-02-24 11:07:38'),
 	(3, 'Paper Products', 'PP', 'All type of paper products', '2020-02-10 00:00:00', 'on', 129, '2020-02-10 14:13:25');
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
+
+-- Dumping structure for view shristationery.category_subcategory_view
+-- Creating temporary table to overcome VIEW dependency errors
+CREATE TABLE `category_subcategory_view` (
+	`id` INT(11) NOT NULL,
+	`categoryname` VARCHAR(100) NOT NULL COLLATE 'utf8mb4_bin',
+	`name` VARCHAR(100) NULL COLLATE 'utf8mb4_bin',
+	`alias` VARCHAR(10) NULL COLLATE 'utf8mb4_bin',
+	`description` VARCHAR(150) NULL COLLATE 'utf8mb4_bin',
+	`status` VARCHAR(50) NULL COLLATE 'utf8mb4_bin'
+) ENGINE=MyISAM;
 
 -- Dumping structure for table shristationery.company
 CREATE TABLE IF NOT EXISTS `company` (
@@ -209,36 +211,11 @@ CREATE TABLE IF NOT EXISTS `persistent_logins` (
   PRIMARY KEY (`series`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumping data for table shristationery.persistent_logins: ~25 rows (approximately)
+-- Dumping data for table shristationery.persistent_logins: ~1 rows (approximately)
 DELETE FROM `persistent_logins`;
 /*!40000 ALTER TABLE `persistent_logins` DISABLE KEYS */;
 INSERT INTO `persistent_logins` (`series`, `username`, `token`, `last_used`) VALUES
-	('0qzBL20tY0XDBZHa6yLoSg==', 'admin@shristationery.com', 'jAASIK+LK9QgxrYKh5nG9A==', '2020-03-09 18:54:43'),
-	('4CZr3bqEIscacEmkx6Ri7A==', 'admin@shristationery.com', 'sz1HGqGxHSfN764oEQfHWA==', '2020-02-22 11:30:21'),
-	('8BqhRAo7l2cl7FT5iSy1lA==', 'admin@shristationery.com', 'OjLl6Ydx0g5efWpO8Uh6nw==', '2020-02-24 17:12:51'),
-	('AEsS4ndtWk5e+U9vybenHw==', 'admin@shristationery.com', 'AViYvCdT4YsfWbfL+jg4+g==', '2020-03-09 18:00:41'),
-	('bCU3uuaTwjdur8Lnsvb2Sg==', 'admin@shristationery.com', 'HC1Qbl5qmOb6VoxUVj01Bw==', '2020-03-09 18:27:32'),
-	('Cd9zRvCzaLNfaTj/cgj1tQ==', 'admin@shristationery.com', 'I0CS0fVtWfJsdSOEJYW+Pw==', '2020-03-09 18:11:09'),
-	('cXG+P6DKT03uV/zSwPkXbg==', 'admin@shristationery.com', '93iCGMPLyvYwJNIT9Gb1ug==', '2020-03-07 16:55:41'),
-	('dhk9wCThLBAV8dpAaOXoKA==', 'admin@shristationery.com', '0isFBZ/Z7n9tW5Cd1QlrPQ==', '2020-03-09 18:19:38'),
-	('DJ5tXdi0sGbcVp61r3RT/w==', 'admin@shristationery.com', 'W/VTMB3B92VC7DHK1yFGWg==', '2020-02-17 17:19:00'),
-	('dKOTaCUdMUyn0cR4J8yl8A==', 'admin@shristationery.com', 'Z/8mC/+k7pYh9UuSHWfn/A==', '2020-02-24 11:07:17'),
-	('fmg4TxTun5m8aQOfwD8Llg==', 'admin@shristationery.com', 'DXDttKtbu+hNhLBQZ3TAug==', '2020-03-06 17:48:14'),
-	('FWU0uKEKC2/CIyVl88Q0kQ==', 'admin@shristationery.com', '3Q6RSi7PJTS52JY9v4iyqw==', '2020-02-24 16:47:11'),
-	('gQF6l+0Mtcqg+T7yaxfuWg==', 'admin@shristationery.com', 'NVhZUGbHVQtnkcxWzC0L2w==', '2020-03-06 17:41:35'),
-	('H7Uyz6ImFsU7JbvSFuOl5w==', 'admin@shristationery.com', 'ZirNUwlsB0TWD4RtQn089g==', '2020-03-09 18:54:47'),
-	('izPTlGpNFc62o+DcOy5eig==', 'admin@shristationery.com', 'HIygcfDTMvRhJHUC4t4TlQ==', '2020-03-07 16:47:36'),
-	('JYVDAHcGRIx5sDOaCjhEjw==', 'admin@shristationery.com', 'eiWLnWuIKMOGl/zuJ0+TKw==', '2020-02-22 20:59:19'),
-	('mFYbQjPpw8d+ZwPPvukvqA==', 'admin@shristationery.com', 'xLpHunpv/ihfdp90d6wOpA==', '2020-03-07 16:36:34'),
-	('MqIoT5aKBb0HmQjqLP9+ZA==', 'admin@shristationery.com', 'RW9cdn5cihOdcf8+0k5I3w==', '2020-02-24 16:53:39'),
-	('q0nVwrLaBirzCIywz2eOwQ==', 'admin@shristationery.com', 'hldfV/5eheoHMzYP375joQ==', '2020-03-07 16:40:04'),
-	('rbbt5bhoGoup6NW4vg2ApA==', 'admin@shristationery.com', 'R8ynrvYDFKPzCI2dTJADBw==', '2020-03-09 15:01:40'),
-	('sYf9ItyCMkV2O5TpdK1+zg==', 'admin@shristationery.com', '7NSMqvz39AXGmYYaGDLfLg==', '2020-03-07 15:39:02'),
-	('u+70zfu2IONRsqDKa8mJJw==', 'admin@shristationery.com', 'T4/dEZg3DQV7+hoogjiNuQ==', '2020-02-17 17:18:22'),
-	('uLYXPlmyiyBF+fFfLExoNQ==', 'admin@shristationery.com', 'FxQqaC8et+wC03OZr8/9/A==', '2020-03-07 16:18:40'),
-	('v/hPjZkRIu/nSxf3Zmmdxw==', 'admin@shristationery.com', '6O+cbaVtKpjaVtHGcMZhjw==', '2020-02-24 16:50:30'),
-	('voQ+YnCmO+4ZfFpkp7NFJQ==', 'admin@shristationery.com', '0L5m2Mcj1W3c+hiH1cLSZg==', '2020-03-09 17:49:27'),
-	('w+WGewX5gCoUEFW88tD+mg==', 'admin@shristationery.com', 'eZC9Ogp+tNq4onLXyS/x9A==', '2020-03-09 17:44:16');
+	('dGLzgsbxmhBM6OaUobHXaA==', 'admin@shristationery.com', 'AypyTc5TF6aYpmLdu26NSg==', '2020-04-04 23:09:15');
 /*!40000 ALTER TABLE `persistent_logins` ENABLE KEYS */;
 
 -- Dumping structure for table shristationery.settings
@@ -299,6 +276,11 @@ CREATE TABLE IF NOT EXISTS `support` (
 DELETE FROM `support`;
 /*!40000 ALTER TABLE `support` DISABLE KEYS */;
 /*!40000 ALTER TABLE `support` ENABLE KEYS */;
+
+-- Dumping structure for view shristationery.category_subcategory_view
+-- Removing temporary table and create final VIEW structure
+DROP TABLE IF EXISTS `category_subcategory_view`;
+CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `category_subcategory_view` AS select `sc`.`id` AS `id`,`c`.`name` AS `categoryname`,`sc`.`name` AS `name`,`sc`.`alias` AS `alias`,`sc`.`description` AS `description`,`sc`.`status` AS `status` from (`category` `c` join `sub_category` `sc` on((`c`.`id` = `sc`.`category_id`))) order by `c`.`name`,`sc`.`name`;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
