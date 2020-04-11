@@ -5,7 +5,6 @@
 <html lang="en">
 <%@ include file="head.jspf" %>
 
-<% request.getSession().setAttribute("userName", com.taim.conduire.common.CommonHelper.getAccount().getShopifyStoreUrl()); %>
 <body>
     <div id="container" class="effect aside-float aside-bright mainnav-lg">
 		<%@ include file="header.jspf" %>

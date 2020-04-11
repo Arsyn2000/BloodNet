@@ -17,6 +17,4 @@ public interface AccountDataRepository extends JpaRepository<AccountData, Intege
             "LOWER(a.accountType) = LOWER(:accountType) and " +
             "LOWER(a.accountStatus) = LOWER(:accountStatus)")
     List<AccountData> findByAccounttypeAndAccountstatus(@Param("accountType") String accountType,@Param("accountStatus")  String accountStatus);
-    
-    List<AccountData> findByShopifyStoreUrl(String shopifyStoreUrl);
 }

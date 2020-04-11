@@ -11,6 +11,5 @@ import com.taim.conduire.service.common.AbstractService;
 public interface AccountDataService extends UserDetailsService, AbstractService<AccountData, Integer> {
     AccountData create(AccountDataDTO accountDataDTO);
 	List<AccountData> findByAccounttypeAndAccountstatus(String accounttype,String accountstatus);
-	List<AccountData> findByShopifyStoreUrl(String shopifyStoreUrl);
 	void deleteByAccountId(Integer id);
 }

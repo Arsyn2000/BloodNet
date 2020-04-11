@@ -1,10 +1,7 @@
 package com.taim.conduire.service.impl;
 
-import com.taim.conduire.common.CommonHelper;
-import com.taim.conduire.domain.AccountData;
-import com.taim.conduire.dto.AccountDataDTO;
-import com.taim.conduire.repository.AccountDataRepository;
-import com.taim.conduire.service.AccountDataService;
+import java.util.Date;
+import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -15,8 +12,11 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import java.util.Date;
-import java.util.List;
+
+import com.taim.conduire.domain.AccountData;
+import com.taim.conduire.dto.AccountDataDTO;
+import com.taim.conduire.repository.AccountDataRepository;
+import com.taim.conduire.service.AccountDataService;
 
 @Service
 public class AccountDataServiceImpl implements AccountDataService {
@@ -61,11 +61,6 @@ public class AccountDataServiceImpl implements AccountDataService {
 		return repository.findByAccounttypeAndAccountstatus(accounttype, accountstatus);
 	}
 	
-	@Override
-	public List<AccountData> findByShopifyStoreUrl(String shopifyStoreUrl) {
-		return repository.findByShopifyStoreUrl(shopifyStoreUrl);
-	}
-
 	@Override
 	@Transactional
 	public void deleteByAccountId(Integer id) {
