@@ -31,7 +31,7 @@ public class TestDataServiceImpl implements TestDataService {
 	}
 	
 	private Sort sortByNameAsc() {
-	        return new Sort(Sort.Direction.ASC, "name");
+	        return new Sort(Sort.Direction.ASC, "fullName");
 	}
 
 	@Override
