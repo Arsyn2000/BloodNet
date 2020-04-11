@@ -1,0 +1,172 @@
+{
+	"info": {
+		"_postman_id": "a45bc7f6-3dbd-4767-becd-aa3ce885bf34",
+		"name": "Shri Stationery",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Load Category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/admin/inventory/category/load-category",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"admin",
+						"inventory",
+						"category",
+						"load-category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/test",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find User By Email Address",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/test/find-user?email=mvidhi40@gmail.com",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"test",
+						"find-user"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "mvidhi40@gmail.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find All User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/test/find-all-user",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"test",
+						"find-all-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Test Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/test/create-user",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"test",
+						"create-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check if Category Exist",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/admin/inventory/category/check-unique-category-name?name=Drawing Instruments&id=3",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"admin",
+						"inventory",
+						"category",
+						"check-unique-category-name"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Drawing Instruments"
+						},
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Category Details",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/admin/inventory/category/get-category/:id",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"admin",
+						"inventory",
+						"category",
+						"get-category",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"id": "5c0b34ce-ccbc-4de0-83a2-072d04312331",
+			"key": "baseUrl",
+			"value": "http://localhost:8080/shristationery/",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
