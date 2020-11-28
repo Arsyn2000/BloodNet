@@ -42,6 +42,8 @@ public class TestController {
         return ResponseEntity.ok("Hello World. This is a reply from /test endpoint");
     }
 
+    //create is post
+    //select * is get 
     @RequestMapping(value = "/create-user", method=RequestMethod.POST)
     public ResponseEntity<?> createUser(@RequestParam(value = "testid",required = false) String testId,
 										@RequestParam("full_name") String sFullName,
